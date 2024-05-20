@@ -4,7 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
+/*NAV*/
 .nav-navbar{
     width: 100%;
     height: 50px;
@@ -20,14 +20,20 @@
     margin: 20px;
     font-size: 20px;
     font-family: sans-serif;
+    color: black;
 }
 
 .nav-navbar ul .nav-navbar-img{
-    list-style: none;
     display: inline;
-    margin-right: 800px;
-    
+    margin-right: 500px;  
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
 }
+
+
+/*HOME CARROSSEL*/
 
 .container{
     width: 100%;
@@ -61,4 +67,295 @@
     text-decoration: none;
     transition: 0.35s;
     background-color: black;
+}
+
+/*HOME SOBRE NOS*/
+
+.sobre {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.sobre-container {
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.sobre-container-texto {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.divisao {
+    padding: 50px;
+}
+
+.sobre-container-img>img {
+    width: 40vw;
+    border-radius: 10px;
+    margin-right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.sobre-container-img2>img {
+    width: 40vw;
+    border-radius: 10px;
+    margin-left: 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.sobre-container-texto {
+    color: rgb(83, 83, 83);
+    margin-left: 50px;
+}
+
+.sobre-container-texto2 {
+    color: rgb(83, 83, 83);
+    margin-right: 50px;
+}
+
+.sobre-container-texto>h1 {
+    color: #202020;
+}
+
+.sobre-container-texto-1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/*HOME MARCAS*/
+.marcas{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.marcas-bmw {
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.marcas-bmw-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+
+.marcas-bmw::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;
+    background-color: white;
+    background-image: url(../assets/BMW1.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+
+.marcas-mercedes{
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.marcas-mercedes::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;
+    background-color: white;
+    background-image: url(../assets/meca.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.marcas-mercedes-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+.marcas-astonmartin{
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.marcas-astonmartin::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;
+    background-color: white;
+    background-image: url(../assets/astonmartin.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.marcas-astonmartin-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+.marcas2{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.marcas-audi{
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+    
+}
+
+.marcas-audi-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+.marcas-audi::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;
+    background-color: white;
+    background-image: url(../assets/audi.jpg);
+    background-size: cover;
+    background-position: 50%;
+
+}
+
+.marcas-volkswagen{
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.marcas-volkswagen::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;
+    background-color: white;
+    background-image: url(../assets/volks.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.marcas-volkswagen-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+.marcas-hyundai{
+    display: inline;
+    margin: auto;
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.marcas-hyundai::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 269px;    
+    background-color: white;
+    background-image: url(../assets/hyundai.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.marcas-hyundai-name{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 32vh;
+    z-index: 100;
+    width: 100%;
+    font-size: 2.0rem;
+}
+
+/*FOOTER*/
+
+.footer-container{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background-color: white;
+    border: solid black ;
+}
+
+.footer-container-1 {
+    display: flex;
+    width: 33%;
+    height: 90%;
+    background-color: white;
+    border: solid blue ;
+    float: left;
+}
+
+.footer-container-2 {
+    display: flex;
+    width: 34%;
+    height: 100%;
+    background-color: white;
+    border: solid red ;
+    justify-content: center;
+}
+
+.footer-container-3 {
+    display: flex;
+    width: 33%;
+    height: 90%;
+    background-color: white;
+    border: solid green ;
+    justify-content: flex-end;
+    margin-top: 50px;
+    float: right;
 }

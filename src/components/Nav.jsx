@@ -1,3 +1,4 @@
+import Logo from "../assets/hoistener-logo.png";
 import { Link } from 'react-router-dom';
 import { MdAccountCircle } from "react-icons/md";
 
@@ -9,9 +10,9 @@ export default function Nav()
         <header className="nav">
             <nav className='nav-navbar'>
                 <ul>
-                    <li className='nav-navbar-img'>
-                        <img src="/assets/hoistener-logo.png" alt="" />
-                    </li>
+                    <Link to="/" className="nav-navbar-img" data-test-id>
+                        HOISTENER
+                    </Link>
                     <Link to="/" className="nav-navbar-link" data-test-id>
                         Home
                     </Link>
