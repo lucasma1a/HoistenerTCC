@@ -7,6 +7,8 @@ import '../css/style.css'
 export default function Nav()
 {
     return (
+        <>
+        <a id="Home"></a>
         <header className="nav">
             <nav className='nav-navbar'>
                 <ul>
@@ -16,19 +18,21 @@ export default function Nav()
                     <Link to="/" className="nav-navbar-link" data-test-id>
                         Home
                     </Link>
-                    <Link to="/Garagem" className="nav-navbar-link" data-test-id>
+                    <Link to="/garagem" className="nav-navbar-link" data-test-id>
                         Garagem
                     </Link>
                     <a href='#Contato' className='nav-navbar-link' data-test-id>
                         Contato
                     </a>
-                    <Link to="/Login" className="nav-navbar-link" data-test-id>
+                    <Link to="/login" className="nav-navbar-link" data-test-id>
                         <MdAccountCircle />
                     </Link>
                     
                 </ul>
             </nav>
         </header>
+        </>
     )
+    
 }
 

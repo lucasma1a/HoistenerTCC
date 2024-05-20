@@ -3,19 +3,18 @@ import Carro from "../assets/R.jpg";
 export default function Home() {
     return (
         <>
+            <a id="Home"></a>
             <div className="container image">
                 <div className="container-produtos">
-                    <h1>Produtos</h1>
-                    <p>Conheça nossos novos produtos</p>
-                    <a href="" className="btn">
-                        Conheça mais...
-                    </a>
+                    <h1>CARROSSEL</h1>
+                    <p>AINDA ESTÁ EM DESENVOLVIMENTO</p>
                 </div>
             </div>
             <section className="sobre">
-                <div className="sobre-container">
-                    <div className="sobre-container-texto">
-                        <h1>About us</h1>
+            <a id="Sobre"></a>
+                <div className="sobre-container">                
+                    <div className="sobre-container-texto">                    
+                        <h1>Nossa Empresa</h1>
                         <p className="sobre-container-texto-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. At veritatis ducimus quaerat ad a laboriosam facilis, earum deleniti nam vero. Omnis cumque obcaecati numquam tempora facere asperiores, sequi officiis corporis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, pariatur porro voluptate ipsum fuga illo beatae quibusdam quisquam eius unde, molestiae libero iste dolores nam repellat quod, numquam magnam nisi.</p>
                         <p className="sobre-container-texto-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur culpa rem aliquid aliquam atque facilis aut ut, ea velit, nisi sit earum saepe quia eveniet dolorum explicabo asperiores? Nulla, dignissimos.</p>
                     </div>
@@ -23,22 +22,21 @@ export default function Home() {
                     <div className="sobre-container-img">
                         <img src={Carro} alt="carro"/>
                     </div>
-                </div>
-                <div className="sobre-container">
-                    
+                </div>                
+                <div className="sobre-container">                    
                     <div className="sobre-container-img2">
                         <img src={Carro} alt="carro"/>
                     </div>
                     <div className="divisao"></div>
                     <div className="sobre-container-texto2">
-                        <h1>About us</h1>
+                        <h1>Valores</h1>
                         <p className="sobre-container-texto-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. At veritatis ducimus quaerat ad a laboriosam facilis, earum deleniti nam vero. Omnis cumque obcaecati numquam tempora facere asperiores, sequi officiis corporis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, pariatur porro voluptate ipsum fuga illo beatae quibusdam quisquam eius unde, molestiae libero iste dolores nam repellat quod, numquam magnam nisi.</p>
                         <p className="sobre-container-texto-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur culpa rem aliquid aliquam atque facilis aut ut, ea velit, nisi sit earum saepe quia eveniet dolorum explicabo asperiores? Nulla, dignissimos.</p>
                     </div>
                 </div>
                 <div className="sobre-container">
                     <div className="sobre-container-texto">
-                        <h1>About us</h1>
+                        <h1>Objetivos</h1>
                         <p className="sobre-container-texto-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. At veritatis ducimus quaerat ad a laboriosam facilis, earum deleniti nam vero. Omnis cumque obcaecati numquam tempora facere asperiores, sequi officiis corporis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, pariatur porro voluptate ipsum fuga illo beatae quibusdam quisquam eius unde, molestiae libero iste dolores nam repellat quod, numquam magnam nisi.</p>
                         <p className="sobre-container-texto-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur culpa rem aliquid aliquam atque facilis aut ut, ea velit, nisi sit earum saepe quia eveniet dolorum explicabo asperiores? Nulla, dignissimos.</p>
                     </div>
