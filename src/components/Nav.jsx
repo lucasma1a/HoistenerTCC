@@ -4,15 +4,13 @@ import { MdAccountCircle } from "react-icons/md";
 import '../css/style.css'
 
 export default function Nav()
-
-
 {
     return (
         <header className="nav">
             <nav className='nav-navbar'>
                 <ul>
                     <li className='nav-navbar-img'>
-                        <img src="./assets/hoistener-logo.png" alt="" />
+                        <img src="/assets/hoistener-logo.png" alt="" />
                     </li>
                     <Link to="/" className="nav-navbar-link" data-test-id>
                         Home
@@ -33,6 +31,3 @@ export default function Nav()
     )
 }
 
-function scrollDown() {
-    $('html, body').animate({scrollTop: $("footer").offset().top}, 200);
-}
