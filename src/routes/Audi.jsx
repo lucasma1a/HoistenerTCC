@@ -1,32 +1,44 @@
+import CarroBMW from "../assets/bmw.jpg";
+import CarroMeca from "../assets/meca.jpg";
+import CarroAston from "../assets/astonmartin.jpg";
+import CarroAudi from "../assets/audi.jpg";
+import CarroVolks from "../assets/volks.jpg";
+import CarroHyundai from "../assets/hyundai.jpg";
 import { Link } from 'react-router-dom';
 export default function Audi(){
     return(
         <>
         <section className="marcas">
-        <container className="marcas-bmw-garagem">
-                    <Link to="/garagem/bmw" className="marcas-bmw-garagem-name">BMW</Link>
+                <container className="marcas-bmw-garagem">
+                    <img src={CarroBMW} alt="carro1" />
+                    <Link to="/garagem/bmw" className="marcas-garagem-name">BMW </Link>
                 </container>                    
                 <container className="marcas-mercedes-garagem">
-                <Link to="/garagem/meca" className="marcas-bmw-garagem-name">MERCEDES</Link>
+                    <img src={CarroMeca} alt="carro2" />
+                    <Link to="/garagem/meca" className="marcas-mercedes-garagem-name">MERCEDES</Link>
                 </container>                    
                 <container className="marcas-astonmartin-garagem">
-                <Link to="/garagem/aston" className="marcas-bmw-garagem-name">ASTON MARTIN</Link>
+                    <img src={CarroAston} alt="carro3" />
+                <Link to="/garagem/aston" className="marcas-astonmartin-garagem-name">ASTON MARTIN</Link>
                 </container>                                        
                 <container className="marcas-audi-garagem">
-                <Link to="/garagem/audi" className="marcas-bmw-garagem-name">AUDI</Link>
+                    <img src={CarroAudi} alt="carro4" />
+                <Link to="/garagem/audi" className="marcas-audi-garagem-name">AUDI</Link>
                 </container>                                        
                 <container className="marcas-volkswagen-garagem">
-                <Link to="/garagem/volks" className="marcas-bmw-garagem-name">VOLKSWAGEN</Link>
+                    <img src={CarroVolks} alt="carro5" />
+                <Link to="/garagem/volks" className="marcas-volkswagen-garagem-name">VOLKSWAGEN</Link>
                 </container>                                        
                 <container className="marcas-hyundai-garagem">
-                <Link to="/garagem/hyundai" className="marcas-bmw-garagem-name">HYUNDAI</Link>
+                    <img src={CarroHyundai} alt="carro6" />
+                <Link to="/garagem/hyundai" className="marcas-hyundai-garagem-name">HYUNDAI</Link>
                 </container>                                        
             </section>
 
             <div className="container-carro">
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 1 </h1>
+                    <h1> BMW 1 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 
@@ -36,7 +48,7 @@ export default function Audi(){
                 </div>
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 2 </h1>
+                    <h1> BMW 2 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 
@@ -46,7 +58,7 @@ export default function Audi(){
                 </div>
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 3 </h1>
+                    <h1> BMW 3 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 
@@ -58,7 +70,7 @@ export default function Audi(){
             <div className="container-carro">
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 4 </h1>
+                    <h1> BMW 4 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 
@@ -68,7 +80,7 @@ export default function Audi(){
                 </div>
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 5 </h1>
+                    <h1> BMW 5 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 
@@ -78,7 +90,7 @@ export default function Audi(){
                 </div>
                 <div className="container-carro-card">
                     <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 6 </h1>
+                    <h1> BMW 6 </h1>
                     <p>Lorem ipsum dolor sit amet, <br/>
                         consectetur adipiscing elit.</p>
                     <div className="container-carro-card-btn"> 

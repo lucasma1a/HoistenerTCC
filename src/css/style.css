@@ -3,34 +3,33 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    list-style: none;
 }
 /*NAV*/
 .nav-navbar{
     width: 100%;
-    height: 50px;
-    display: flex;
+    height: 70px;
+    display: inline-flex;
     align-items: center;
     justify-content: space-around;
     background-color: gainsboro;
 }
 
 .nav-navbar ul .nav-navbar-link {
-    display: inline;
+    display: inline-flex;
     text-decoration: none;
     margin: 20px;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: black;
 }
 
-.nav-navbar ul .nav-navbar-img{
-    display: inline;
-    margin-right: 500px;  
-    align-items: center;
-    color: black;
+.nav-navbar ul .nav-navbar-img img{
+    margin-right: 500px;
     text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
+    width: 50px;
 }
+
 
 
 /*HOME CARROSSEL*/
@@ -358,6 +357,10 @@
     margin-left: 35%; 
     margin-top: 20px;
   }
+
+  #btnlogin a{
+    text-decoration: none;
+  }
   #btnlogin:hover{
     background-color: #000;
     color:RED;
@@ -367,37 +370,32 @@
   }
 
 /*GARAGEM*/
+.marcas-garagem-name{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    font-size: 1.0rem;
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+    margin-top: 2vh;
+}
+
 .marcas-bmw-garagem {
     display: inline;
     margin: auto;
-    width: 8vw;
-    height: 40vh;
+    width: 10vw;
+    height: 30vh;
     background-color: white;
 }
 
-.marcas-bmw-garagem-name{
+
+.marcas-bmw-garagem img{
+    width: 60%;
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
-    cursor: pointer;
-    text-decoration: none;
-    color:#000;
-}
-
-
-.marcas-bmw-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;
-    background-color: white;
-    background-image: url(../assets/BMW1.jpg);
-    background-size: cover;
-    background-position: 50%;
+    align-items: center;
+    margin-left: 25px;
 }
 
 
@@ -405,153 +403,121 @@
     display: inline;
     margin: auto;
     width: 8vw;
-    height: 40vh;
     background-color: white;
-}
-
-.marcas-mercedes-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;
-    background-color: white;
-    background-image: url(../assets/meca.jpg);
-    background-size: cover;
-    background-position: 50%;
+    height: 30vh;
 }
 
 .marcas-mercedes-garagem-name{
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
+    width: 100%;
+    font-size: 1.0rem;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
+    margin-top: 2vh;
 }
+
+.marcas-mercedes-garagem img {
+    width: 100%;
+}
+
 
 .marcas-astonmartin-garagem{
     display: inline;
     margin: auto;
     width: 8vw;
-    height: 40vh;
     background-color: white;
-}
-
-.marcas-astonmartin-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;
-    background-color: white;
-    background-image: url(../assets/astonmartin.jpg);
-    background-size: cover;
-    background-position: 50%;
+    height: 30vh;
 }
 
 .marcas-astonmartin-garagem-name{
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
+    width: 100%;
+    font-size: 1.0rem;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
+    margin-left: 20px;
 }
+
+.marcas-astonmartin-garagem img{
+    width: 100%;
+}
+
 
 .marcas-audi-garagem{
     display: inline;
     margin: auto;
     width: 8vw;
-    height: 40vh;
     background-color: white;
-    
+    height: 30vh;
 }
 
 .marcas-audi-garagem-name{
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
+    width: 100%;
+    font-size: 1.0rem;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
+    margin-top: 5px;
 }
 
-.marcas-audi-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;
-    background-color: white;
-    background-image: url(../assets/audi.jpg);
-    background-size: cover;
-    background-position: 50%;
-
+.marcas-audi-garagem img{
+    width: 80%;
+    margin-left: 10px;
 }
 
 .marcas-volkswagen-garagem{
     display: inline;
     margin: auto;
     width: 8vw;
-    height: 40vh;
     background-color: white;
-}
-
-.marcas-volkswagen-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;
-    background-color: white;
-    background-image: url(../assets/volks.jpg);
-    background-size: cover;
-    background-position: 50%;
+    height: 30vh;
 }
 
 .marcas-volkswagen-garagem-name{
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
+    width: 100%;
+    font-size: 1.0rem;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
+}
+
+.marcas-volkswagen-garagem img{
+    width: 90%;
+    margin-left: 5px;
+    display: flex;
 }
 
 .marcas-hyundai-garagem{
     display: inline;
     margin: auto;
     width: 8vw;
-    height: 40vh;
     background-color: white;
-}
-
-.marcas-hyundai-garagem::before{
-    content: "";
-    position: absolute;
-    height: 30%;
-    width: 100px;    
-    background-color: white;
-    background-image: url(../assets/hyundai.jpg);
-    background-size: cover;
-    background-position: 50%;
+    height: 30vh;
 }
 
 .marcas-hyundai-garagem-name{
     justify-content: center;
-    align-items: center;
     display: flex;
-    margin-top: 32vh;
-    z-index: 100;
-    width: 80%;
-    font-size: 2.0rem;
+    width: 100%;
+    font-size: 1.0rem;
     cursor: pointer;
-}  
+    text-decoration: none;
+    color:black;
+    margin-top: 10px;
+}
+
+.marcas-hyundai-garagem img{
+    width: 100%;
+    margin-top: 15px;
+}
 
 /*GARAGEM CAR*/
 
@@ -598,7 +564,7 @@
 }
 
 .container-carro-card h1{
-    font-family: 'Righteous', sans-serif;
+    font-family: 'Righteous', 'Times New Roman', Times, serif;
     color: rgba(255,255,255,0.98);
     text-transform: uppercase;
     font-size: 2.4rem;
@@ -606,7 +572,7 @@
 
 .container-carro-card p {
     color: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 0.8rem;
     line-height: 150%;
@@ -713,6 +679,7 @@
     text-decoration: none;
     flex-direction: column;
     margin-top: 210px;
+
 }
 
 .footer-container-2 {
@@ -725,17 +692,17 @@
     text-decoration: none;
 }
 
-.footer-container-2-info {
-    list-style: none;
+.footer-container-2-info a {
     text-align: center;
     justify-content: center;
     display: flex;
     margin-top: 150px;
     font-family: 'Times New Roman', Times, serif;
-    text-decoration: overline;
     font-size: 1.5rem;
     color: black;
+    text-decoration: none;
 }
+
 
 .footer-container-3 {
     display: flex;
@@ -757,6 +724,7 @@
     margin-top: 90px;
     font-family: 'Times New Roman', Times, serif;
 }
+
 .footer-container-3-info1{
     list-style: none;
     text-align: center;

@@ -41,7 +41,7 @@ export default function Login() {
         Senha:
         <input type="password" id="senha" placeholder='Digite sua senha' ref={senha}/>
       </p>
-      <button type="submit" id="btnlogin">Login</button>
+      <button type="submit" id="btnlogin"><a href='/'>Login</a></button>
     </form>
       /*final da condição ternaria */
     )}
