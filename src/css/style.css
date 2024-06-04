@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin:0;
     padding: 0;
@@ -6,22 +9,35 @@
     list-style: none;
 }
 /*NAV*/
+
 .nav-navbar{
     width: 100%;
     height: 70px;
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
-    background-color: gainsboro;
+    background-color: black;
+    border-bottom: 2px solid white;
+}
+
+.nav-navbar ul{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 0.5%;
 }
 
 .nav-navbar ul .nav-navbar-link {
     display: inline-flex;
     text-decoration: none;
     margin: 20px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.nav-navbar-img {
+    margin-top: 1%;
 }
 
 .nav-navbar ul .nav-navbar-img img{
@@ -71,8 +87,8 @@
 /*HOME SOBRE NOS*/
 
 .sobre {
-    margin-top: 100px;
     width: 100%;
+    background: black;
 }
 
 .sobre-container {
@@ -81,43 +97,45 @@
     margin: auto;
     align-items: center;
     padding-top: 100px;
+    padding-bottom: 2%;
 }
 
 .sobre-container-texto {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', Times, serif;
 }
 
 .divisao {
     padding: 50px;
 }
 
-.sobre-container-img>img {
+.sobre-container-img img {
     width: 40vw;
     border-radius: 10px;
     margin-right: 50px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(255, 255, 255, 0.25) 2px 14px 24px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.sobre-container-img2>img {
+.sobre-container-img2 img {
     width: 40vw;
     border-radius: 10px;
     margin-left: 50px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(255, 255, 255, 0.25) 2px 14px 24px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 
 .sobre-container-texto {
-    color: rgb(83, 83, 83);
+    color: white;
     margin-left: 50px;
 }
 
 .sobre-container-texto2 {
-    color: rgb(83, 83, 83);
+    color: white;
     margin-right: 50px;
+    font-family: 'Montserrat', Times, serif;
 }
 
-.sobre-container-texto>h1 {
-    color: #202020;
+.sobre-container-texto h1 {
+    color: white;
 }
 
 .sobre-container-texto-1 {
@@ -130,8 +148,9 @@
     display: flex;
     width: 100%;
     height: 500px;
-    margin-top: 20px;
-    background-color: white;
+    background-color: black;
+    color: white;
+    border-top: 1px solid white;
 }
 
 .marcas-bmw {
@@ -227,11 +246,13 @@
     display: flex;
     width: 100%;
     height: 500px;
-    
+    background-color: black;
+    color: white;
 }
 
 .marcas-audi{
     display: inline;
+    margin: auto;
     margin: auto;
     width: 20vw;
     height: 40vh;
@@ -321,11 +342,10 @@
 /*LOGIN*/
 .login{
     width: 100%;
-    height: 400px;
     justify-content: center;
     display: flex;
     align-items: center;
-   
+    height: auto;
   }
 .login p {
     margin-top: 30px;
@@ -525,61 +545,72 @@
 .container-carro {
     backdrop-filter: blur(16px) saturate(180%);
     background-color: white;
-    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);  
-    padding: 38px;  
     display: flex;
     align-items: center;
     justify-content:center;
     text-align: center;
-  
-}
-
-.container-carro + .container-carro{
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
     margin-top: 20px;
 }
 
+
 .container-carro-card {
-    width: 100%;
-    height: 100%;
-    margin:auto;
+    width: 30%;
+    height: auto;
     border: solid gray;
     border-radius: 10px;
     background-color: gray;
-  
-}
-
-.container-carro-card + .container-carro-card{
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 8px 16px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    gap: 10px;
 }
 
 .container-carro-card-image {
-    background-image: url(../assets/carro.jpg);
     background-position: center;
     background-size: cover;
     height: 300px;
-    width: 100%;
+    width: 70%;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255, 0.255)
+    border: 1px solid rgba(255,255,255, 0.255);
+}
+
+.container-carro-card-image img{
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
 }
 
 .container-carro-card h1{
-    font-family: 'Righteous', 'Times New Roman', Times, serif;
+    font-family: "Montserrat", sans-serif;
     color: rgba(255,255,255,0.98);
     text-transform: uppercase;
     font-size: 2.4rem;
+    font-weight: 400;
 }
 
 .container-carro-card p {
     color: #fff;
-    font-family: 'Lato', 'Times New Roman', Times, serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 16px;
     line-height: 150%;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
+.container-carro-card-btn{
+    display: flex;
+    gap: 20px;
+}
 
 .btn {
     border: none;
@@ -628,11 +659,14 @@
 
 /*FOOTER*/
 
+.footer{
+    margin-top: 1%;
+}
+
 .footer-container{
     display: flex;
     width: 100%;
     height: 500px;
-    margin-top: 20px;
     background-color: white;
     
 }
@@ -735,4 +769,151 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+.lista-carros{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: auto;
+}
 
+.lista-carros-btn{
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    gap: 20px;
+    margin-top: 5%;
+    padding-right: 2%;
+}
+
+.cadastrar{
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    width: 15%;
+}
+
+.logout{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    width: 15%;
+    cursor: pointer;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2%;
+    font-size: 18px;
+    text-align: left;
+    height: auto;
+  }
+  
+  table thead {
+    background-color: blue;
+    color: #ffffff;
+  }
+  
+  table thead th {
+    padding: 12px 15px;
+  }
+  
+  table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  table tbody td {
+    padding: 12px 15px;
+  }
+  
+  table tbody td a, table tbody td button {
+    color: #009879;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  table tbody td a:hover, table tbody td button:hover {
+    color: #006f5d;
+  }
+  
+.form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    padding: 16px 8px;
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.form input{
+    width: 80%;
+    height: 6vh;
+    border: none;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.8);
+    background-color: #06b89a00;
+    color: white;
+}
+
+.form input::placeholder{
+    color: white;
+}
+
+.form button{
+    margin-top: 3%;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-s{
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-image: url(../assets/banner-carro.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-img{
+    width: 50%;
+    height: 100vh;
+}
+
+.form-img img{
+    width: 100%;
+    height: 100vh;
+}
+
+.carrossel{
+    width: 100%;
+    border: 3px solid black;
+    height: 100vh;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+}
+
+.carrossel img{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
