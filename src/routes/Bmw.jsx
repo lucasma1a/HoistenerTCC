@@ -1,11 +1,30 @@
-import CarroBMW from "../assets/bmw.jpg";
-import CarroMeca from "../assets/meca.jpg";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CarroAston from "../assets/astonmartin.jpg";
 import CarroAudi from "../assets/audi.jpg";
-import CarroVolks from "../assets/volks.jpg";
+import CarroBMW from "../assets/bmw.jpg";
 import CarroHyundai from "../assets/hyundai.jpg";
-import { Link } from 'react-router-dom';
+import CarroMeca from "../assets/meca.jpg";
+import CarroVolks from "../assets/volks.jpg";
+import Car from '../components/Car';
+
 export default function Bmw(){
+
+    const [carros, setCarros] = useState([])
+
+    const marca = 'bmw'
+    const carrosFiltrados = carros.filter(carro => carro.marca === marca)
+
+    useEffect(() => {
+        fetch('http://localhost:3000/carros')
+        .then(res => {
+            return res.json()
+        })
+        .then(data => {
+            setCarros(data)
+        })
+    }, [])
+
     return(
         <>
         <section className="marcas">
@@ -35,69 +54,15 @@ export default function Bmw(){
                 </container>                                        
             </section>
 
-            <div className="container-carro">
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 1 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 2 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 3 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-            </div>
-            <div className="container-carro">
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 4 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 5 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> AUDI 6 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
+            <div className="container-carro">                  
+            {carrosFiltrados.map(carro => (
+                    <Car
+                        key={carro.nome}
+                        nome={carro.nome}
+                        preco={carro.preco}
+                        imagem={carro.imagem}
+                    />
+                ))}
             </div>
         </>
     )
