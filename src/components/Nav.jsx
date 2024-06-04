@@ -1,18 +1,10 @@
-import Logo from '../assets/hoistener-logo.png';
-import { Link } from 'react-router-dom';
 import { MdAccountCircle } from "react-icons/md";
-import { HiOutlineLogout } from "react-icons/hi";
-import '../css/style.css'
+import { Link } from 'react-router-dom';
+import Logo from '../assets/hoistener-logo.png';
+import '../css/style.css';
 
 export default function Nav()
 {
-
-    const handleLogout = () => {
-        sessionStorage.removeItem('usuario');
-        sessionStorage.removeItem('senha');
-        alert('saindo da sessão...');
-        navigate('/');
-      };
 
     return (
         <>
@@ -33,8 +25,8 @@ export default function Nav()
                         Contato
                     </a>
                     <Link to="/login" className="nav-navbar-link" data-test-id>
-                        <MdAccountCircle />
-                        <HiOutlineLogout onClick={handleLogout}/>
+                        <MdAccountCircle size={25}/>
+                        {/* <HiOutlineLogout onClick={handleLogout}/> */}
                     </Link>
                     
                 </ul>
