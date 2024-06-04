@@ -1,6 +1,6 @@
-import {useRef} from 'react'
+import { useRef } from 'react';
+import '../css/style.css';
 import Lista from './Lista';
-import '../css/style.css'
 
 export default function Login() {
     /*Hook- UseRef- ele retorna uma referencia a um elemento ou componente sem ter que ser renderizado novamente */
@@ -12,13 +12,13 @@ export default function Login() {
 
   //criando a função handleSubmit
   const handleSubmit =()=>{
-    if(usuario.current.value =="Lucas" && senha.current.value=="123456"){
+    if(usuario.current.value ==="Admin" && senha.current.value === "123"){
 
       let token =
         Math.random().toString(16).substring(2)+
         Math.random().toString(16).substring(2);
 
-      sessionStorage.setItem("usuario","Lucas");
+      sessionStorage.setItem("usuario","Admin");
       sessionStorage.setItem("senha",token); 
 
     }else{
@@ -41,7 +41,7 @@ export default function Login() {
         Senha:
         <input type="password" id="senha" placeholder='Digite sua senha' ref={senha}/>
       </p>
-      <button type="submit" id="btnlogin"><a href='/'>Login</a></button>
+      <button type="submit" id="btnlogin">Login</button>
     </form>
       /*final da condição ternaria */
     )}
