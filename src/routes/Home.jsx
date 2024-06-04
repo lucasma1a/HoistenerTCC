@@ -1,15 +1,16 @@
 import Carro from "../assets/R.jpg";
+import Carrossel from "../components/Carrossel";
 
 export default function Home() {
     return (
         <>
-            <a id="Home"></a>
-            <div className="container image">
+        <div className="carrossel">
+        <Carrossel/>
+        </div>
+            {/* <div className="container image">
                 <div className="container-produtos">
-                    <h1>CARROSSEL</h1>
-                    <p>AINDA ESTÁ EM DESENVOLVIMENTO</p>
                 </div>
-            </div>
+            </div> */}
             <section className="sobre">
             <a id="Sobre"></a>
                 <div className="sobre-container">                
