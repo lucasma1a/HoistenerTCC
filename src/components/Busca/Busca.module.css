@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.busca{
+    width: 50%;
+    height: 6vh;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    transition: 200ms ease-in-out;
+    box-shadow: 2px 4px 16px rgba(0,0,0,0.8);
+}
+
+.busca:focus{
+    border: none;
+    border-bottom: 6px solid black;
+}

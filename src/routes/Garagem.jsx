@@ -6,68 +6,64 @@ import CarroHyundai from "../assets/hyundai.jpg";
 import CarroMeca from "../assets/meca.jpg";
 import CarroVolks from "../assets/volks.jpg";
 import Car from '../components/Car';
-import Marcas from '../components/Marcas';
 import '../css/style.css';
+import styleBusca from '../components/Busca/Busca.module.css'
+import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx'
 
 export default function Garagem() {
 
     const [carros, setCarros] = useState([])
-
-    const marcas = [
-        {
-        marca: 'Bmw',
-        imagem: CarroBMW    
-        },
-        {
-        marca: 'Aston',
-        imagem: CarroAston    
-        },
-        {
-        marca: 'Audi',
-        imagem: CarroAudi    
-        },
-        {
-        marca: 'Hyundai',
-        imagem: CarroHyundai    
-        },
-        {
-        marca: 'Meca',
-        imagem: CarroMeca    
-        },
-        {
-        marca: 'Volks',
-        imagem: CarroVolks    
-        },
-    ]
+    const [busca, setBusca] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/carros')
-        .then(res => {
-            return res.json()
-        })
-        .then(data => {
-            setCarros(data)
-        })
-    }, [])
+        const fetchCarros = async () => {
+            let url = 'http://localhost:3000/carros';
+            
+            if (busca.length > 2) {
+                url += `?marca=${busca}`;
+            }
+                const response = await fetch(url);
+                const dados = await response.json();
+                setCarros(dados);
+            
+        };
+        fetchCarros();
+    }, [busca]);
+
+    const funcBusca = (e) => {
+        setBusca(e.target.value)
+    }
 
     return(
         <>
-           
+                     
             <section className="marcas">
-            {marcas.map((marca, index) => {
-                return <Marcas key={index} imagem={marca.imagem} marca={marca.marca} linkado={marca.marca}/>
-            })}
+            <ListaMarcas/>
             </section>
 
+            <div className="container-busca">
+            <input
+                className={styleBusca.busca}
+                value={busca}
+                onChange={funcBusca}
+                placeholder="Digite a marca do carro"
+            />
+            </div>
+            
+
             <div className="container-carro">                  
-            {carros.map(carro => (
+            {carros.length ? (
+                carros.map((carro, index) => (
                     <Car
-                        key={carro.nome}
+                        key={index}
                         nome={carro.nome}
                         preco={carro.preco}
                         imagem={carro.imagem}
                     />
-                ))}
+                ))
+            ) : (
+                <h1>Não há carros com essa marca</h1>
+            )}
             </div>
         </>
     )
