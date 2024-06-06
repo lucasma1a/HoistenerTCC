@@ -1,7 +1,8 @@
-const Teste = () => {
+const Test = () => {
     return(
-        <></>
+        <>
+        </>
     )
 }
 
-export default Teste
+export default Test

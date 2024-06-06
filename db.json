@@ -32,7 +32,14 @@
       "id": "f568",
       "nome": "well",
       "preco": "asa",
-      "marca": "Ped",
+      "marca": "sassa",
+      "imagem": "https://github.com/welltecnc.png"
+    },
+    {
+      "id": "ab7d",
+      "nome": "sasa",
+      "preco": "55555",
+      "marca": "Cidade",
       "imagem": "https://github.com/welltecnc.png"
     }
   ]

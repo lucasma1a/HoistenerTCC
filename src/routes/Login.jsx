@@ -35,11 +35,11 @@ export default function Login() {
     <form onSubmit={handleSubmit}>
       <p>
         Usuario:
-        <input type="text" id="user" placeholder="Digite seu usuário" ref={usuario}/>
+        <input type="text" id="user" placeholder="Digite seu usuário" ref={usuario} required/>
       </p>
       <p>
         Senha:
-        <input type="password" id="senha" placeholder='Digite sua senha' ref={senha}/>
+        <input type="password" id="senha" placeholder='Digite sua senha' ref={senha} required/>
       </p>
       <button type="submit" id="btnlogin">Login</button>
     </form>

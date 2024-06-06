@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Gif from '../assets/confuso.gif';
 import Car from "./Car";
 
 const Teste = () => {
@@ -38,7 +39,10 @@ const Teste = () => {
                     />
                 ))
             ) : (
-                <h1>Não há carros com essa marca</h1>
+                <div className="">
+                    <img src={Gif} alt="" />
+                    <h1>Não há carros com essa marca</h1>
+                </div>
             )}
         </>
     );
