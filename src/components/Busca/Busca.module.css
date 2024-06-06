@@ -11,7 +11,7 @@
     border-radius: 8px;
     background-color: whitesmoke;
     transition: 200ms ease-in-out;
-    box-shadow: 2px 4px 16px rgba(0,0,0,0.8);
+    box-shadow: 2px 4px 16px rgba(255,255,255,0.8);
 }
 
 .busca:focus{

@@ -1,17 +1,35 @@
-import '../css/style.css'
+import style from '../css/Car.module.css'
+import { PiShoppingCartDuotone } from "react-icons/pi"
 
-const Car = ({nome, preco, imagem}) => {
+const Car = ({nome, preco, imagem, descricao}) => {
     return(
         <>
-           <div className="container-carro-card">
-                    <div className="container-carro-card-image">
+           <div className={style.containerCarroCard}>
+                    <div className={style.containerCarroCardImage}>
                         <img src={imagem} alt="" />    
                     </div>
-                    <h1>{nome}</h1>
-                    <p>R${preco}</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
+                    <div className={style.containerCarroCardPrice}>
+                    <p>R$ {preco}</p>
+                    </div>
+                    <div className={style.containerCarroCardName}>
+                        <p>{nome}</p>
+                        <p>{descricao}</p>
+                    </div>
+                    <div className={style.containerCarroCardLista}>
+                        <ul>
+                            <li>Marca</li>
+                            <li>Modelo</li>
+                            <li>Placa</li>
+                        </ul>
+                        <ul>
+                            <li>lançamento</li>
+                            <li>color</li>
+                            <li>color</li>
+                        </ul>
+                    </div>
+                    <div className={style.containerCarroCardBtn}> 
+                        <button className={style.containerCarroCardBtnBtn}>Detalhes</button>
+                        <button className={style.containerCarroCardBtnBtn}> <PiShoppingCartDuotone size={25}/>Comprar agora</button>
                     </div>                    
                 </div>
         </>
