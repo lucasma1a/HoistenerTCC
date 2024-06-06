@@ -27,14 +27,6 @@
     padding-top: 0.5%;
 }
 
-.nav-navbar ul .nav-navbar-link {
-    display: inline-flex;
-    margin: 20px;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-}
-
 .nav-navbar-img {
     margin-top: 1%;
 }
