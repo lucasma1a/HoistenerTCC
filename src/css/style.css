@@ -29,7 +29,6 @@
 
 .nav-navbar ul .nav-navbar-link {
     display: inline-flex;
-    text-decoration: none;
     margin: 20px;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
@@ -402,11 +401,15 @@
 }
 
 .marcas-bmw-garagem {
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    width: 10vw;
+    width: 15%;
     height: 30vh;
-    background-color: white;
+    background-color: black;
 }
 
 
@@ -415,7 +418,8 @@
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-left: 25px;
+    height: 16vh;
+    border-radius: 8px;
 }
 
 
@@ -541,6 +545,17 @@
 
 /*GARAGEM CAR*/
 
+
+.container-busca{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 100%;
+}
 
 .container-carro {
     backdrop-filter: blur(16px) saturate(180%);
