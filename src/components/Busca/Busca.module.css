@@ -16,5 +16,5 @@
 
 .busca:focus{
     border: none;
-    border-bottom: 6px solid black;
+    border-bottom: 6px solid rgb(83, 79, 79);
 }

@@ -1,0 +1,14 @@
+.erroBusca{
+    color: white;
+    width: 40%;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.erroBusca img{
+    width: 50%;
+}

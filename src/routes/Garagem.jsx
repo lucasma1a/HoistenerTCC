@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
-import CarroAston from "../assets/astonmartin.jpg";
-import CarroAudi from "../assets/audi.jpg";
-import CarroBMW from "../assets/bmw.jpg";
-import CarroHyundai from "../assets/hyundai.jpg";
-import CarroMeca from "../assets/meca.jpg";
-import CarroVolks from "../assets/volks.jpg";
+import styleBusca from '../components/Busca/Busca.module.css';
 import Car from '../components/Car';
+import ErroBusca from '../components/ErroBusca/ErroBusca.jsx';
+import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx';
 import '../css/style.css';
-import styleBusca from '../components/Busca/Busca.module.css'
-import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx'
 
 export default function Garagem() {
 
@@ -62,7 +57,7 @@ export default function Garagem() {
                     />
                 ))
             ) : (
-                <h1>Não há carros com essa marca</h1>
+                <ErroBusca/>
             )}
             </div>
         </>

@@ -23,17 +23,10 @@
     },
     {
       "id": "4c03",
-      "nome": "Arthur",
+      "nome": "Thurtux",
       "preco": "55555",
       "marca": "Cidade",
       "imagem": "https://github.com/Thurtux.png"
-    },
-    {
-      "id": "f568",
-      "nome": "well",
-      "preco": "asa",
-      "marca": "sassa",
-      "imagem": "https://github.com/welltecnc.png"
     }
   ]
 }

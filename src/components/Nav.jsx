@@ -25,7 +25,7 @@ export default function Nav()
                     <a href='#Contato' className={style.navNavbarLink} data-test-id>
                         Contato
                     </a>
-                    <NavLink to="/login"  className={style.navNavbarLink} data-test-id>
+                    <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         <MdAccountCircle size={25}/>
                         {/* <HiOutlineLogout onClick={handleLogout}/> */}
                     </NavLink>

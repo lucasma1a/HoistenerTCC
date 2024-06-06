@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import Logo from '../assets/hoistener-logo.png';
+import style from '../css/FormLogin.module.css';
 import '../css/style.css';
 import Lista from './Lista';
 
@@ -31,18 +33,37 @@ export default function Login() {
       {/*condição ternaria */}
       {getUsuario && getSenha ?(
         <Lista/>
-      ):(  
-    <form onSubmit={handleSubmit}>
-      <p>
-        Usuario:
-        <input type="text" id="user" placeholder="Digite seu usuário" ref={usuario} required/>
-      </p>
-      <p>
-        Senha:
-        <input type="password" id="senha" placeholder='Digite sua senha' ref={senha} required/>
-      </p>
-      <button type="submit" id="btnlogin">Login</button>
-    </form>
+      ):( 
+        <div className={style.loginForm}>
+          <div className={style.loginFormImg}>
+            <img src={Logo} alt="imagem" />
+          </div>
+          <form onSubmit={handleSubmit} className={style.loginFormForm}>
+        <p>
+          Usuario:
+          <input
+            type="text"
+            id="user"
+            placeholder="Digite seu usuário"
+            ref={usuario}
+            required
+          />
+        </p>
+        <p>
+          Senha:
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            ref={senha}
+            required
+          />
+        </p>
+        <button type="submit" id="btnlogin">
+          Login
+        </button>
+      </form>
+        </div> 
       /*final da condição ternaria */
     )}
     </section>
