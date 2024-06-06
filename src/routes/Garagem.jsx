@@ -59,6 +59,7 @@ export default function Garagem() {
                         nome={carro.nome}
                         preco={carro.preco}
                         imagem={carro.imagem}
+                        descricao={carro.descricao}
                     />
                 ))
             ) : (
