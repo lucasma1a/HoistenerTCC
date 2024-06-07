@@ -1,6 +1,6 @@
 .containerCarroCard {
-    width: 22%;
-    height: 60vh;
+    width: 25%;
+    height: 85vh;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -106,5 +106,5 @@
     display: flex;
     gap: 10px;
     text-align: center;
-    height: 4.5vh;
+    height: auto;
 }
