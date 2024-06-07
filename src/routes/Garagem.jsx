@@ -11,19 +11,14 @@ export default function Garagem() {
     const [busca, setBusca] = useState('');
 
     useEffect(() => {
-        const fetchCarros = async () => {
-            let url = 'http://localhost:3000/carros';
-            
-            if (busca.length > 2) {
-                url += `?marca=${busca}`;
-            }
-                const response = await fetch(url);
-                const dados = await response.json();
-                setCarros(dados);
-            
-        };
-        fetchCarros();
-    }, [busca]);
+        fetch('http://localhost:4000/cars')
+        .then(response => response.json())
+        .then(dados => setCarros(dados))
+    })
+
+    const carrosFiltrados = carros.filter(carro =>
+        carro.mark.toLowerCase().includes(busca.toLowerCase())
+    );
 
     const funcBusca = (e) => {
         setBusca(e.target.value)
@@ -47,15 +42,20 @@ export default function Garagem() {
             
 
             <div className="container-carro">                  
-            {carros.length ? (
-                carros.map((carro, index) => (
+            {carrosFiltrados.length ? (
+                carrosFiltrados.map((carro, index) => (
                     <Car
                         key={index}
-                        nome={carro.nome}
-                        preco={carro.preco}
-                        imagem={carro.imagem}
-                        descricao={carro.descricao}
+                        nome={carro.name}
+                        preco={carro.price}
+                        imagem={carro.image}
+                        descricao={carro.description}
+                        marca={carro.mark}
+                        modelo={carro.model}
+                        placa={carro.plate}
+                        cor={carro.color}
                     />
+                    // nome, preco, imagem, descricao, marca, modelo, placa, lancamento, cor, data
                 ))
             ) : (
                 <ErroBusca/>
