@@ -1,7 +1,7 @@
-import style from '../css/Car.module.css'
 import { PiShoppingCartDuotone } from "react-icons/pi"
+import style from '../css/Car.module.css'
 
-const Car = ({nome, preco, imagem, descricao}) => {
+const Car = ({nome, preco, imagem, descricao, marca, modelo, placa, lancamento, cor, data}) => {
     return(
         <>
            <div className={style.containerCarroCard}>
@@ -17,14 +17,12 @@ const Car = ({nome, preco, imagem, descricao}) => {
                     </div>
                     <div className={style.containerCarroCardLista}>
                         <ul>
-                            <li>Marca</li>
-                            <li>Modelo</li>
-                            <li>Placa</li>
+                            <li>Marca: {marca}</li>
+                            <li>Modelo: {modelo}</li>
+                            <li>Placa: {placa}</li>
                         </ul>
                         <ul>
-                            <li>lançamento</li>
-                            <li>color</li>
-                            <li>color</li>
+                            <li>color: {cor}</li>
                         </ul>
                     </div>
                     <div className={style.containerCarroCardBtn}> 
