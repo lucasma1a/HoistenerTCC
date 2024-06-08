@@ -1,45 +1,29 @@
 import { useEffect, useState } from "react";
-import Car from "./Car";
+import { useParams } from "react-router-dom";
 
 const Teste = () => {
     const [carros, setCarros] = useState([]);
-    const [busca, setBusca] = useState('');
 
     useEffect(() => {
-        const fetchCarros = async () => {
-            let url = 'http://localhost:3000/carros';
-            
-            if (busca.length > 2) {
-                url += `?marca=${busca}`;
-            }
-                const response = await fetch(url);
-                const dados = await response.json();
-                setCarros(dados);
-            
-        };
-        fetchCarros();
-    }, [busca]);
+        try {
+        fetch('http://localhost:4000/cars')
+            .then(response => response.json())
+            .then(dados => setCarros(dados));
+        } catch {
+            alert('erro ao se conectar com a API')
+        }
+    }, []);
+
+    const parametro = useParams();
+
+    const carro = carros.find((car) => {
+        return car._id === parametro.id;  
+    });
+
+    console.log(parametro);
 
     return (
         <>
-            <input
-                type="text"
-                value={busca}
-                onChange={e => setBusca(e.target.value)}
-                placeholder="Digite a marca do carro"
-            />
-            {carros.length ? (
-                carros.map((carro, index) => (
-                    <Car
-                        key={index}
-                        nome={carro.nome}
-                        preco={carro.preco}
-                        imagem={carro.imagem}
-                    />
-                ))
-            ) : (
-                <h1>sa</h1>
-            )}
         </>
     );
 };

@@ -6,7 +6,7 @@ export default function ErroBusca(){
         <>
         <div className={style.erroBusca}>
             <img src={Gif} alt="" />
-            <h1>Não há carros com essa marca</h1>
+            <h1>Não há carros registrados com essa marca ou modelo</h1>
         </div>
         </>
     )

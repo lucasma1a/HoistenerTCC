@@ -6,6 +6,7 @@ import Teste from './components/Teste.jsx';
 import Aston from './routes/Aston.jsx';
 import Audi from './routes/Audi.jsx';
 import Bmw from './routes/Bmw.jsx';
+import Detalhes from './routes/Detalhes/Detalhes.jsx';
 import Error from './routes/Error.jsx';
 import Garagem from './routes/Garagem.jsx';
 import Home from './routes/Home.jsx';
@@ -35,6 +36,8 @@ const router = createBrowserRouter(
         { path: '/lista', element: <Lista />},
         {path: '/produtos', element: <Produtos/>},
         { path:'/editarcarro/:id', element:<Produtos/>},
+        { path:'/detalhes/:id', element:<Detalhes/>},
+        { path:'/teste/:id', element: <Teste />},
         { path:'/teste', element: <Teste />},
       ],
     },

@@ -6,7 +6,6 @@ import CarroBMW from "../assets/bmw.jpg";
 import CarroHyundai from "../assets/hyundai.jpg";
 import CarroMeca from "../assets/meca.jpg";
 import CarroVolks from "../assets/volks.jpg";
-import Car from '../components/Car';
 
 export default function Bmw(){
 
@@ -55,14 +54,6 @@ export default function Bmw(){
             </section>
 
             <div className="container-carro">                  
-            {carrosFiltrados.map(carro => (
-                    <Car
-                        key={carro.nome}
-                        nome={carro.nome}
-                        preco={carro.preco}
-                        imagem={carro.imagem}
-                    />
-                ))}
             </div>
         </>
     )
