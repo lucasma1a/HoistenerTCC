@@ -1,28 +1,28 @@
 import { PiShoppingCartDuotone } from "react-icons/pi"
 import style from '../css/Car.module.css'
 
-const Car = ({nome, preco, imagem, descricao, marca, modelo, placa, lancamento, cor, data}) => {
+const Car = ({car}) => {
     return(
         <>
            <div className={style.containerCarroCard}>
                     <div className={style.containerCarroCardImage}>
-                        <img src={imagem} alt="" />    
+                        <img src={car.image} alt="" />    
                     </div>
                     <div className={style.containerCarroCardPrice}>
-                    <p>R$ {preco}</p>
+                    <p>R$ {car.price}</p>
                     </div>
                     <div className={style.containerCarroCardName}>
-                        <p>{nome}</p>
-                        <p>{descricao}</p>
+                        <p>{car.name}</p>
+                        <p>{car.description}</p>
                     </div>
                     <div className={style.containerCarroCardLista}>
                         <ul>
-                            <li>Marca: {marca}</li>
-                            <li>Modelo: {modelo}</li>
-                            <li>Placa: {placa}</li>
+                            <li>Marca: {car.mark}</li>
+                            <li>Modelo: {car.model}</li>
+                            <li>Placa: {car.plate}</li>
                         </ul>
                         <ul>
-                            <li>color: {cor}</li>
+                            <li>color: {car.cor}</li>
                         </ul>
                     </div>
                     <div className={style.containerCarroCardBtn}> 

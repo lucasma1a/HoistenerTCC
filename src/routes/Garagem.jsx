@@ -45,15 +45,8 @@ export default function Garagem() {
             {carrosFiltrados.length ? (
                 carrosFiltrados.map((carro, index) => (
                     <Car
-                        key={index}
-                        nome={carro.name}
-                        preco={carro.price}
-                        imagem={carro.image}
-                        descricao={carro.description}
-                        marca={carro.mark}
-                        modelo={carro.model}
-                        placa={carro.plate}
-                        cor={carro.color}
+                        key={carro.id}
+                        car={carro}
                     />
                     // nome, preco, imagem, descricao, marca, modelo, placa, lancamento, cor, data
                 ))
