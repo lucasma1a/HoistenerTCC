@@ -1,0 +1,67 @@
+.detalhes{
+    width: 90%;
+    display: flex;
+    height: auto;
+    padding: 2% 5%;
+    background-color: rgb(254, 246, 246);
+    border-radius: 8px;
+    box-shadow: 4px 8px 16px rgba(255, 255, 255, 0.6);
+    gap: 40px;
+    padding-bottom: 4%;
+}
+
+.detalhesImg{   
+    border-radius: 8px;
+    width: 47%;
+    height: 70vh;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.detalhesImg img {
+    width: 100%;
+    height: 70vh;
+    border-radius: 8px;
+}
+
+.detalhesInfo{
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desc ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    gap: 20px;
+}
+
+.btns button{
+    height: auto;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
