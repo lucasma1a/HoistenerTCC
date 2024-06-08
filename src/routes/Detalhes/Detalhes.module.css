@@ -1,0 +1,8 @@
+.detalhes{
+    width: 100%;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
