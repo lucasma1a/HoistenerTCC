@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Teste from './components/Teste.jsx';
+import { Provider } from './context/Provider.jsx';
 import Aston from './routes/Aston.jsx';
 import Audi from './routes/Audi.jsx';
 import Bmw from './routes/Bmw.jsx';
+import Carrinho from './routes/Carrinho/Carrinho.jsx';
 import Detalhes from './routes/Detalhes/Detalhes.jsx';
 import Error from './routes/Error.jsx';
 import Garagem from './routes/Garagem.jsx';
@@ -39,12 +41,15 @@ const router = createBrowserRouter(
         { path:'/detalhes/:id', element:<Detalhes/>},
         { path:'/teste/:id', element: <Teste />},
         { path:'/teste', element: <Teste />},
+        { path:'/carrinho', element: <Carrinho />},
       ],
     },
   ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Provider>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
