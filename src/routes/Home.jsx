@@ -1,5 +1,5 @@
 import Carro from "../assets/R.jpg";
-import Carrossel from "../components/Carrossel";
+import Carrossel from "../components/Carrossel/Carrossel";
 
 export default function Home() {
     return (

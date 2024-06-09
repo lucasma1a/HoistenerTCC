@@ -1,7 +1,9 @@
-import Banner from '../assets/banner-carro.jpg'
-import '../css/style.css'
+import Banner from '../Carrossel/img/banner-carro.jpg'
+import '../Carrossel/Carrossel.modules.css'
 
 const Carrossel = () => {
+
+    
     return(
         <>
         <div className="carrossel">
