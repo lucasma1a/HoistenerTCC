@@ -1,0 +1,10 @@
+.container-carrossel{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-carrossel-slide{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
