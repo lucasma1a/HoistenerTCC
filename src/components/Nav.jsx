@@ -1,3 +1,4 @@
+import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/hoistener-logo.png';
@@ -27,8 +28,11 @@ export default function Nav()
                     </a>
                     <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         <MdAccountCircle size={25}/>
-                        {/* <HiOutlineLogout onClick={handleLogout}/> */}
                     </NavLink>
+                    <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
+                    <FaShoppingCart size={25}/>
+                    </NavLink>
+
                 </ul>
             </nav>
         </header>
