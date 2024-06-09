@@ -1,31 +1,24 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from 'react'
 
 const Teste = () => {
-    const [carros, setCarros] = useState([]);
 
-    useEffect(() => {
-        try {
-        fetch('http://localhost:4000/cars')
-            .then(response => response.json())
-            .then(dados => setCarros(dados));
-        } catch {
-            alert('erro ao se conectar com a API')
-        }
-    }, []);
+  
 
-    const parametro = useParams();
+  return (
+    <div>
+     <h1>Carrinho de Compras</h1>
+      {cart.length > 0 ? (
+        cart.map((car, index) => (
+          <div key={index}>
+            <h2>{car.mark} {car.model}</h2>
+            <p>R$ {car.price}</p>
+          </div>
+        ))
+      ) : (
+        <p>O carrinho está vazio.</p>
+      )}
+    </div>
+  )
+}
 
-    const carro = carros.find((car) => {
-        return car._id === parametro.id;  
-    });
-
-    console.log(parametro);
-
-    return (
-        <>
-        </>
-    );
-};
-
-export default Teste;
+export default Teste

@@ -65,3 +65,7 @@
     gap: 10px;
     cursor: pointer;
 }
+
+.btnLink{
+    text-decoration: none;
+}

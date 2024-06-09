@@ -1,8 +1,20 @@
-import { PiShoppingCartDuotone } from "react-icons/pi"
-import { Link } from "react-router-dom"
-import style from './DetalhesCarro.module.css'
+import { useContext } from "react";
+import { PiShoppingCartDuotone } from "react-icons/pi";
+import { Link, useNavigate } from "react-router-dom";
+import AppContext from '../../context/AppContext.jsx';
+import style from './DetalhesCarro.module.css';
 
 export default function DetalhesCarro({infoCar}){
+
+    const { addToCart } = useContext(AppContext);
+    const navigate = useNavigate();
+    
+
+    const handleAddToCart = () => {
+        addToCart(infoCar);
+        navigate('/carrinho'); // Redireciona para a página do carrinho
+    };
+
     return(
         <>
         <section className={style.detalhes}>
@@ -30,8 +42,8 @@ export default function DetalhesCarro({infoCar}){
             </div>
 
             <div className={style.btns}>
-                <button> <PiShoppingCartDuotone size={25}/>Adicionar ao Carrinho</button>
-                <Link to='/garagem'>
+                <button onClick={handleAddToCart}> <PiShoppingCartDuotone size={25}/>Adicionar ao Carrinho</button>
+                <Link to='/garagem' className={style.btnLink}>
                 <button>Voltar para garagem</button>
                 </Link>
                 </div>
