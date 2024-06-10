@@ -1,0 +1,45 @@
+.container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 4px 16px rgba(255,255,255,0.8);
+    border-radius: 16px;
+}
+
+.form{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px;
+    width: 45%;
+    height: 60vh;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.form label{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form label input{
+    margin-left: 1%;
+    background-color: whitesmoke;
+    border: none;
+    height: 5vh;
+    border-radius: 8px;
+    width: 90%;
+    font-size: 18px;
+}
+
+.form button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 16px;
+    cursor: pointer;
+}
