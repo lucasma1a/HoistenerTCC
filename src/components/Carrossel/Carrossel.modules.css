@@ -12,3 +12,21 @@
 .container-carrossel-swiper{
     color: white;
 }
+
+@media(min-width: 320px) and (max-width: 519px){
+    .container-carrossel img{
+        height: 60vh;
+    }
+}
+
+@media (min-width: 520px) and (max-width: 768px){
+    .container-carrossel img{
+        height: 80vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1440px){
+    .container-carrossel img{
+        height: 100vh;
+    }
+}

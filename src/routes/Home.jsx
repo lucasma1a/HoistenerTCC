@@ -47,28 +47,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="marcas">
-                <container className="marcas-bmw">
-                    <span className="marcas-bmw-name">BMW</span>
-                </container>                    
-                <container className="marcas-mercedes">
-                    <span className="marcas-mercedes-name">MERCEDES</span>
-                </container>                    
-                <container className="marcas-astonmartin">
-                    <span className="marcas-astonmartin-name">ASTON MARTIN</span>
-                </container>                                        
-            </section>
-            <section className="marcas2"> 
-                <container className="marcas-audi">
-                    <span className="marcas-audi-name">AUDI</span>
-                </container>                                        
-                <container className="marcas-volkswagen">
-                    <span className="marcas-volkswagen-name">VOLKSWAGEN</span>
-                </container>                                        
-                <container className="marcas-hyundai">
-                    <span className="marcas-hyundai-name">HYUNDAI</span>
-                </container>                                        
-            </section>
         </>
     );
 }

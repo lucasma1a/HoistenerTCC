@@ -1,7 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
-import LogoC from '../assets/logo-claro.jpg';
 import style from '../css/Link.module.css';
 import '../css/style.css';
 

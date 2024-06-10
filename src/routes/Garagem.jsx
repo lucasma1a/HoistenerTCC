@@ -1,7 +1,7 @@
+
 import { useEffect, useState } from 'react';
 import styleBusca from '../components/Busca/Busca.module.css';
 import Car from '../components/Car/Car.jsx';
-import ErroBusca from '../components/ErroBusca/ErroBusca.jsx';
 import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx';
 import '../css/style.css';
 
@@ -10,6 +10,25 @@ export default function Garagem() {
     const [carros, setCarros] = useState([])
     const [busca, setBusca] = useState('');
     const texto = 'Não há carros com esta marca ou modelo'
+    const testeCarro = [
+        {
+            id: 1,
+            image: 'https://github.com/welltecnc.png',
+            price: 20,
+            mark: 'bmw',
+            model: 'i8',
+            color: 'black'
+        },
+        {
+            id: 2,
+            image: 'https://github.com/welltecnc.png',
+            price: 40,
+            mark: 'aston',
+            model: 'enildo',
+            color: 'black'
+        },
+    ]
+
 
     useEffect(() => {
       try {
@@ -49,8 +68,11 @@ export default function Garagem() {
             </div>
             
 
-            <div className="container-carro">                  
-            {carrosFiltrados.length ? (
+            <div className="container-carro">
+                {testeCarro.map(carro => {
+                    return <Car key={carro.id} car={carro}/>
+                })}                  
+            {/* {carrosFiltrados.length ? (
                 carrosFiltrados.map(carro => (
                     <Car
                         key={carro._id}
@@ -59,7 +81,8 @@ export default function Garagem() {
                 ))
             ) : (
                 <ErroBusca texto={texto}/>
-            )}
+            )} */}
+
             </div>
         </>
     )
