@@ -29,6 +29,7 @@ export default function Garagem() {
         },
     ]
 
+
     useEffect(() => {
       try {
          fetch("http://localhost:4000/cars")
@@ -81,6 +82,7 @@ export default function Garagem() {
             ) : (
                 <ErroBusca texto={texto}/>
             )} */}
+
             </div>
         </>
     )
