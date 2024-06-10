@@ -9,6 +9,7 @@ export default function Garagem() {
 
     const [carros, setCarros] = useState([])
     const [busca, setBusca] = useState('');
+    const texto = 'Não há carros com esta marca ou modelo'
 
     useEffect(() => {
       try {
@@ -57,7 +58,7 @@ export default function Garagem() {
                     />
                 ))
             ) : (
-                <ErroBusca/>
+                <ErroBusca texto={texto}/>
             )}
             </div>
         </>
