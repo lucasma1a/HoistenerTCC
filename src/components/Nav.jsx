@@ -1,6 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
+import Logo from '../assets/hoistener-logo1.png';
 import style from '../css/Link.module.css';
 import '../css/style.css';
 
@@ -14,7 +15,7 @@ export default function Nav()
             <nav className='nav-navbar'>
                 <ul>
                     <NavLink to="/" className={`nav-navbar-img`} data-test-id>
-                        <img src={LogoC}></img>        
+                        <img src={Logo}></img>        
                     </NavLink>
                     <NavLink to="/" className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         Home
