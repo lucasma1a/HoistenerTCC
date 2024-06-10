@@ -12,6 +12,7 @@
     background-color: whitesmoke;
     transition: 200ms ease-in-out;
     box-shadow: 2px 4px 16px rgba(255,255,255,0.8);
+    margin-top: 15vh;
 }
 
 .busca:focus{
@@ -23,6 +24,7 @@
     .busca{
         width: 90%;
         font-size: 14px;
+        margin-top: 32vh;
     }
     
 }

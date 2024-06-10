@@ -43,3 +43,9 @@
     border-radius: 16px;
     cursor: pointer;
 }
+
+@media(min-width: 320px) and (max-width: 768px) {
+    .form label{
+        width: 90%;
+    }
+}
