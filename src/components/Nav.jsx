@@ -1,6 +1,5 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
-import { FiMenu } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/hoistener-logo1.png';
 import style from '../css/Link.module.css';

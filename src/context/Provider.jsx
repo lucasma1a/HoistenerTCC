@@ -3,6 +3,7 @@ import AppContext from './AppContext.jsx';
 
 export const Provider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [user, setUser] = useState('') 
 
     const addToCart = (car) => {
       const existe = cart.some(item => item._id === car._id);
@@ -20,7 +21,9 @@ export const Provider = ({ children }) => {
     const value = {
         cart,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        user,
+        setUser
     };
 
     return (
