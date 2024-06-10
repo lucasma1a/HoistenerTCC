@@ -9,96 +9,32 @@ export default function Hyundai(){
     return(
         <>
         <section className="marcas">
-                <container className="marcas-bmw-garagem">
+        <div className="marcas-bmw-garagem">
                     <img src={CarroBMW} alt="carro1" />
-                    <Link to="/garagem/bmw" className="marcas-garagem-name">BMW </Link>
-                </container>                    
-                <container className="marcas-mercedes-garagem">
+                    <Link to="/garagem" className="marcas-garagem-name">BMW </Link>
+                </div>                    
+                <div className="marcas-bmw-garagem">
                     <img src={CarroMeca} alt="carro2" />
-                    <Link to="/garagem/meca" className="marcas-mercedes-garagem-name">MERCEDES</Link>
-                </container>                    
-                <container className="marcas-astonmartin-garagem">
+                    <Link to="/garagem" className="marcas-garagem-name">MERCEDES</Link>
+                </div>                    
+                <div className="marcas-bmw-garagem">
                     <img src={CarroAston} alt="carro3" />
-                <Link to="/garagem/aston" className="marcas-astonmartin-garagem-name">ASTON MARTIN</Link>
-                </container>                                        
-                <container className="marcas-audi-garagem">
+                <Link to="/garagem" className="marcas-garagem-name">ASTON MARTIN</Link>
+                </div>                                        
+                <div className="marcas-bmw-garagem">
                     <img src={CarroAudi} alt="carro4" />
-                <Link to="/garagem/audi" className="marcas-audi-garagem-name">AUDI</Link>
-                </container>                                        
-                <container className="marcas-volkswagen-garagem">
+                <Link to="/garagem" className="marcas-garagem-name">AUDI</Link>
+                </div>                                        
+                <div className="marcas-bmw-garagem">
                     <img src={CarroVolks} alt="carro5" />
-                <Link to="/garagem/volks" className="marcas-volkswagen-garagem-name">VOLKSWAGEN</Link>
-                </container>                                        
-                <container className="marcas-hyundai-garagem">
+                <Link to="/garagem" className="marcas-garagem-name">VOLKSWAGEN</Link>
+                </div>                                        
+                <div className="marcas-bmw-garagem">
                     <img src={CarroHyundai} alt="carro6" />
-                <Link to="/garagem/hyundai" className="marcas-hyundai-garagem-name">HYUNDAI</Link>
-                </container>                                        
+                <Link to="/garagem" className="marcas-garagem-name">HYUNDAI</Link>
+                </div>                                         
             </section>
 
-            <div className="container-carro">
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 1 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 2 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 3 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-            </div>
-            <div className="container-carro">
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 4 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 5 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-                <div className="container-carro-card">
-                    <div className="container-carro-card-image"> </div>
-                    <h1> HYUNDAI 6 </h1>
-                    <p>Lorem ipsum dolor sit amet, <br/>
-                        consectetur adipiscing elit.</p>
-                    <div className="container-carro-card-btn"> 
-                        <button className="btn outline">DETAILS</button>
-                        <button className="btn fill">BUY NOW</button>
-                    </div>                    
-                </div>
-            </div>
         </>
     )
 
