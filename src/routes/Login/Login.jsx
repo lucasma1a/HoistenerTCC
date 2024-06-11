@@ -1,9 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/hoistener-logo1.png";
 import "../../css/style.css";
 import style from "./Login.module.css";
 
 export default function Login() {
+
+  const [usersCadastrados, setUsersCadastrados] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:4000/users')
+    .then(response => response.json())
+    .then(data => setUsersCadastrados(data))
+  }, [])
+
+  console.log(usersCadastrados)
+
   return (
     <section className="login">
       <div className={style.loginForm}>

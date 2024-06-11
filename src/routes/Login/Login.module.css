@@ -4,7 +4,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     padding: 24px 14px;
-    width: 80%;
+    width: 80%
 }
 
 .loginFormImg{
@@ -77,6 +77,7 @@
     gap: 20px;
     justify-content: center;
     text-align: center;
+    padding-bottom: 5%;
 }
 
 .cadastro button{
