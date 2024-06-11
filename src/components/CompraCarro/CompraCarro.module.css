@@ -1,0 +1,138 @@
+.container{
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 4px 8px 16px rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    background-color: white;
+    width: 80%;
+    padding: 2rem 2rem;
+}
+ 
+.containerCard{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.containerImg{
+    width: 70%;
+}
+ 
+.containerImg img{
+    border-radius: 16px;
+    box-shadow: 4px 8px 8px rgba(0,0,0,0.4);
+    width: 100%;
+    height: 50vh;
+}
+ 
+.containerInfo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+ 
+.containerInfo ul{
+    justify-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    display: flex;
+    font-size: 25px;
+    width: 70%;
+    background-color: rgb(241, 234, 234);
+    padding: 1.25rem;
+}
+ 
+.infoTop {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px
+}
+ 
+.infoBot {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+ 
+.containerDetails{
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    width: 35%;
+    background-color: rgb(241, 234, 234);
+    padding: 1.25rem;
+}
+ 
+.containerDetails details{
+    width: 100%;
+    all: unset;
+    cursor: pointer;
+}
+ 
+.containerInfo ul{
+    display: flex;
+    gap: 20px;
+}
+ 
+.containerInfo ul li{
+    margin-top: 0.4%;
+}
+ 
+.containerDetails{
+    display: flex;
+}
+ 
+.form{
+    width: 35%;
+}
+ 
+.form form{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding-left: 2rem;
+}
+ 
+.form form label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+    gap: 5px;
+}
+ 
+.form form label input{
+    width: 70%;
+    height: 3vh;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    transition: 200ms ease-in-out;
+    padding: 1.25rem;
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+ 
+.form form label input:focus{
+    border-bottom: 6px solid rgb(83, 79, 79);
+}
+ 
+.form form label input::placeholder{
+    font-family: "Montserrat", sans-serif;
+}
+ 
+.form form button{
+    background-color: black;
+    color: white;
+    width: 40%;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 550;
+}
