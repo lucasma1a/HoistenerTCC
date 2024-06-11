@@ -22,6 +22,7 @@ import Login from './routes/Login/Login.jsx';
 import Meca from './routes/Meca.jsx';
 import Produtos from './routes/Produtos.jsx';
 import Volks from './routes/Volks.jsx';
+import Compra from './routes/Compra/Compra.jsx'
 
 import 'swiper/css';
 import 'swiper/css/navigation';

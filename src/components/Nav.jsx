@@ -1,12 +1,20 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
+import { FaTimes, FaBars } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import { useRef } from "react";
 import Logo from '../assets/hoistener-logo1.png';
 import style from '../css/Link.module.css';
 import '../css/style.css';
 
 export default function Nav()
 {
+
+    const navRef = useRef();
+
+    const mostrarNavBar = () => {
+        navRef.current.classlist.toggle("responsive_nav")
+    }
 
     return (
         <>
@@ -29,12 +37,20 @@ export default function Nav()
                     <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         <MdAccountCircle size={25}/>
                     </NavLink>
-                    <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
+
+                    <button className="nav-bar-btn-fechar" onClick={mostrarNavBar}>
+                        <FaTimes/>
+                    </button>
+
+                    {/* <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                     <FaShoppingCart size={25}/>
-                    </NavLink>
+                    </NavLink> */}
 
                 </ul>
             </nav>
+            <button className="nav-bar-btn" onClick={mostrarNavBar}>
+                <FaBars/>
+            </button>
         </header>
         </>
     )

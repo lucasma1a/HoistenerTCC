@@ -36,6 +36,13 @@
     width: 70px;
 }
 
+.nav-bar-btn-fechar{
+    display: none;
+}
+.nav-bar-btn{
+    display: none;
+}
+
 
 
 
