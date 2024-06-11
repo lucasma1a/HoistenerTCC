@@ -407,7 +407,7 @@
 
 
 .marcas-bmw-garagem img{
-    width: 70%;
+    width: 50%;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -785,6 +785,7 @@ table {
     }
     .marcas{
         grid-template-columns:repeat(2, 1fr);
+        height: 65vh;
     }
 
 }
@@ -837,6 +838,10 @@ table {
     .marcas-bmw-garagem{
         width: 65%;
     }
+    .marcas{
+        grid-template-columns:repeat(2, 1fr);
+        height: 80vh;
+    }
     
 }
 
@@ -849,6 +854,9 @@ table {
     }
     .marcas-bmw-garagem{
         width: 50%;
+    }
+    .marcas-bmw-garagem img{
+        width: 100%;
     }
     
 }
