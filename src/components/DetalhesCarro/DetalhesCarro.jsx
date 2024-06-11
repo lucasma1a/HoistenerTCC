@@ -15,6 +15,12 @@ export default function DetalhesCarro({infoCar}){
         navigate('/carrinho'); // Redireciona para a página do carrinho
     };
 
+    function formatPrice(price) {
+        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+        
+    const formattedPrice = formatPrice(infoCar.price);
+
     return(
         <>
         <section className={style.detalhes}>
@@ -24,7 +30,7 @@ export default function DetalhesCarro({infoCar}){
             <div className={style.detalhesInfo}>
                 <h1>{infoCar.mark} {infoCar.model}</h1>
 
-                <h2>R$ {infoCar.price}</h2>
+                <h2>R$ {formattedPrice}</h2>
 
                 <div className={style.desc}>
                     <ul>

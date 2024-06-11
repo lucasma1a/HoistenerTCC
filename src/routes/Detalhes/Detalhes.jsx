@@ -25,6 +25,7 @@ export default function Detalhes(){
     console.log(parametro);
     console.log(carro);
 
+    
     return(
         <>
       {carro ? (

@@ -5,7 +5,6 @@ import Car from '../components/Car/Car.jsx';
 import ErroBusca from '../components/ErroBusca/ErroBusca.jsx';
 import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx';
 import '../css/style.css';
-import Marcas from '../components/Marcas/Marcas.jsx';
 
 export default function Garagem() {
 
@@ -51,6 +50,7 @@ export default function Garagem() {
         setBusca(e.target.value)
     }
 
+  
 
     console.log(carros)
     return(

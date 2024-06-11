@@ -5,6 +5,13 @@ import AppContext from '../../context/AppContext.jsx';
 import style from './Car.module.css';
 
 const Car = ({ car }) => {
+
+    function formatPrice(price) {
+        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+        
+    const formattedPrice = formatPrice(car.price);
+
     const { addToCart } = useContext(AppContext);
     const navigate = useNavigate();
 
@@ -19,7 +26,7 @@ const Car = ({ car }) => {
                 <img src={car.image} alt="" />
             </div>
             <div className={style.containerCarroCardPrice}>
-                <p>R$ {car.price}</p>
+                <p>{formattedPrice}</p>
             </div>
             <div className={style.containerCarroCardName}>
                 <p>{car.mark} {car.model}</p>
