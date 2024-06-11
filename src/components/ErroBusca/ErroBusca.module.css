@@ -12,3 +12,13 @@
 .erroBusca img{
     width: 50%;
 }
+
+@media(min-width: 320px) and (max-width: 519px){
+    .erroBusca{
+        font-size: 15px;
+    }
+    .erroBusca img{
+        width: 80%;
+    }
+    
+}

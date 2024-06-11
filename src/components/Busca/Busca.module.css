@@ -12,9 +12,25 @@
     background-color: whitesmoke;
     transition: 200ms ease-in-out;
     box-shadow: 2px 4px 16px rgba(255,255,255,0.8);
+    margin-top: 15vh;
 }
 
 .busca:focus{
     border: none;
     border-bottom: 6px solid rgb(83, 79, 79);
+}
+
+@media(min-width: 320px) and (max-width: 519px){
+    .busca{
+        width: 90%;
+        font-size: 14px;
+        margin-top: 32vh;
+    }
+    
+}
+@media (min-width: 520px) and (max-width: 1000px){
+    .busca{
+        width: 70%;
+        font-size: 18px;
+    }
 }

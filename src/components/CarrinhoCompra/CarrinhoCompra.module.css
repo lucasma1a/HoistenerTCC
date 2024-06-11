@@ -49,3 +49,28 @@
     background-color: white;
     cursor: pointer;
 }
+
+@media (min-width: 321px) and (max-width: 768px){
+    .carrinho{
+        padding: 10px 15px;
+        gap: 15px;
+        padding-right: 2%;
+        font-size: 10px;
+    }
+
+    .carrinhoProdutoImagem{
+        width: 70%;
+    }
+    
+}
+
+@media screen and (max-width: 320px){
+    .carrinhoProdutoImagem{
+        width: 100%;
+        height: 50%;
+    }
+    .carrinhoProdutoTexto{
+        width: 20%;
+        gap: 10px;
+    }
+}
