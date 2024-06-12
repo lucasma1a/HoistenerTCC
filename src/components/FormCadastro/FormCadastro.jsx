@@ -16,7 +16,6 @@ const FormCadastro = () => {
     setNovoUsuario({...novoUsuario, [e.target.name]: e.target.value});
 }
 
-
     const handleSubmit = (e) => {
       e.preventDefault();
       fetch("http://localhost:4000/user/", {
@@ -25,9 +24,13 @@ const FormCadastro = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(novoUsuario),
-      }).then(() => {
-        alert('Usuário cadastrado')
-        navigate('/login')
+      }).then(({status}) => {
+        if(status === 400){
+          alert('Já existe um usuário com este email cadastrado')
+        } else {
+          alert('Usuário cadastrado')
+          navigate('/login')
+        }
       });
     };
 
