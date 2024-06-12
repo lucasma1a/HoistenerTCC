@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import style from './CompraCarro.module.css'
-import { FaArrowDown } from "react-icons/fa";
+import React, { useState } from 'react';
+import style from './CompraCarro.module.css';
  
 const CompraCarro = ({ car }) => {
  
@@ -10,17 +9,21 @@ const CompraCarro = ({ car }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
- 
+    function formatPrice(price) {
+        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+    
+      const formattedPrice = formatPrice(car.price);
     return (
         <>
             <section className={style.container}>
                 <div className={style.containerCard}>
                     <h1 className={style.containerTitle}>
-                        Modelo Marca        
-                        <h2>R$ 50.000</h2>
+                        {car.model} {car.mark}        
+                        <h2>{formattedPrice}</h2>
                     </h1>
                     <div className={style.containerImg}>
-                        <img src={`https://github.com/welltecnc.png`} alt="" />
+                        <img src={car.image} alt={`${car.mark}, ${car.model}`} />
                     </div>
                     <div className={style.containerInfo}>
                         <ul className={style.infoTop}>
@@ -33,18 +36,6 @@ const CompraCarro = ({ car }) => {
                             <li>carro</li>
                             <li>carro</li>
                         </ul>
-                    </div>
-                    <div className={style.containerDetails}>
-                        <details>
-                            <summary>Descrição do veículo</summary>
- 
-                            <ul>
-                                <li>ashsiajsa</li>
-                                <li>sahsahsi</li>
-                                <li>sahsahsi</li>
-                                <li>sahsahsi</li>
-                            </ul>
-                        </details>
                     </div>
  
                 </div>
