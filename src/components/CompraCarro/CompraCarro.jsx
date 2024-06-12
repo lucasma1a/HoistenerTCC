@@ -19,7 +19,7 @@ const CompraCarro = ({ car }) => {
             <section className={style.container}>
                 <div className={style.containerCard}>
                     <h1 className={style.containerTitle}>
-                        {car.model} {car.mark}        
+                        {car.mark}  {car.model}       
                         <h2>{formattedPrice}</h2>
                     </h1>
                     <div className={style.containerImg}>

@@ -22,10 +22,6 @@ export default function Detalhes(){
         return car._id === parametro.id;  
     });
 
-    console.log(parametro);
-    console.log(carro);
-
-    
     return(
         <>
       {carro ? (

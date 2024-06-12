@@ -1,11 +1,13 @@
 import React from 'react'
+import UserLogado from './UserLogado/UserLogado'
 
 const Teste = () => {
   return (
-    <div>
+    <>
 
+      <UserLogado/>
 
-    </div>
+    </>
   )
 }
 

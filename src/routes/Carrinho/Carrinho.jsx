@@ -10,7 +10,6 @@ const Carrinho = () => {
 
   const handleRemove = (id) => {
     removeFromCart(id)
-    console.log('olá')
   }
 
   return (
