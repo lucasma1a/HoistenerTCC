@@ -1,16 +1,26 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { useContext, useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
-import { FaTimes, FaBars } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
-import { useRef } from "react";
 import Logo from '../assets/hoistener-logo1.png';
+import AppContext from "../context/AppContext";
 import style from '../css/Link.module.css';
 import '../css/style.css';
 
 export default function Nav()
 {
+    const {userLogado} = useContext(AppContext)
+    console.log(userLogado)
 
     const navRef = useRef();
+
+    const getId = sessionStorage.getItem('user')
+
+    if(userLogado){
+        console.log('molina n vem hj')
+    } else {
+        console.log('ashu')
+    }
 
     const mostrarNavBar = () => {
         navRef.current.classlist.toggle("responsive_nav")
@@ -36,6 +46,7 @@ export default function Nav()
                     </a>
                     <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         <MdAccountCircle size={25}/>
+                        {userLogado ? (<p>{`${userLogado.name}`}</p>): <p></p>}
                     </NavLink>
 
                     <button className="nav-bar-btn-fechar" onClick={mostrarNavBar}>
