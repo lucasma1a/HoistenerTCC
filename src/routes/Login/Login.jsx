@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/hoistener-logo1.png";
+import UserLogado from "../../components/UserLogado/UserLogado";
 import AppContext from "../../context/AppContext";
 import "../../css/style.css";
 import style from "./Login.module.css";
@@ -8,8 +9,14 @@ import style from "./Login.module.css";
 export default function Login() {
 
   const navigate = useNavigate()
-  const [users, setUsers] = useState('')
+  const [users, setUsers] = useState([])
   const {userLogado, setUserLogado} = useContext(AppContext)
+  const [logged, setLogged] = useState([])
+  const getId = sessionStorage.getItem('id')
+  const getToken = sessionStorage.getItem('token')
+
+  console.log('Id: ',getId)
+  console.log('token:', getToken)
 
   const [login, setLogin] = useState({
     email: '',
@@ -27,7 +34,7 @@ export default function Login() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const logado = users.find(user => user.email === login.email)
 
@@ -51,6 +58,9 @@ export default function Login() {
       }
     ).then(async (response) => {
       if (response.status === 200) {
+        alert('Login Efetuado')
+        console.log('user logged', logado)
+        navigate('/')
         return response.json(); 
       } else {
         return response.json().then((data) => {
@@ -59,9 +69,9 @@ export default function Login() {
       }
     })
     .then((data) => {
-      sessionStorage.setItem('user', data._id);
+      sessionStorage.setItem('id', data._id);
+      sessionStorage.setItem('token', data.token);
       console.log(data); 
-      navigate('/'); 
     })
     .catch((e) => {
       console.log(e);
@@ -72,7 +82,8 @@ export default function Login() {
 
   return (
     <section className="login">
-      <div className={style.loginForm}>
+      {getId && getToken ? (<UserLogado loggedUser={userLogado}/>) : 
+      (<div className={style.loginForm}>
         <div className={style.loginFormImg}>
           <img src={Logo} alt="imagem" />
         </div>
@@ -118,7 +129,7 @@ export default function Login() {
             </Link>
           </div>
         </form>
-      </div>
+      </div>) }
     </section>
   );
 }
