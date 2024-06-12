@@ -1,10 +1,13 @@
 .navNavbarLink {
-    display: inline-flex;
+    display: flex;
     margin: 20px;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     color: rgb(202, 189, 189);
     text-decoration: none;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .linkDestacado{
