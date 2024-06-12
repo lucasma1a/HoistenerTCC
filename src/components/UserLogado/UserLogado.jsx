@@ -1,8 +1,14 @@
-import React from 'react'
-import style from './UserLogado.module.css'
+import React from 'react';
+import style from './UserLogado.module.css';
 
 const UserLogado = ({loggedUser}) => {
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('token');
+    alert('saindo da sessão...');
+    location.reload()
+  };
 
   return (
     <>
@@ -10,14 +16,14 @@ const UserLogado = ({loggedUser}) => {
         <h1>Olá {loggedUser.name}</h1>
 
         <div className={style.containerInfo}>
-          <p>Seu Email: {loggedUser.email}</p>
-          <p>Sua Reserva: ainda n tem</p>
+          <p><b>Seu Email:</b> {loggedUser.email}</p>
+          <p><b>Sua Reserva:</b> ainda n tem</p>
         </div>
 
         <div className={style.containerBtns}>
           <button>Alterar senha</button>
           <button>Alterar E-mail</button>
-          <button>Sair</button>
+          <button onClick={handleLogout}>Sair</button>
         </div>
       </div>
     </>
