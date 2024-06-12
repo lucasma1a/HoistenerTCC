@@ -1,20 +1,74 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/hoistener-logo1.png";
+import AppContext from "../../context/AppContext";
 import "../../css/style.css";
 import style from "./Login.module.css";
 
 export default function Login() {
 
-  const [usersCadastrados, setUsersCadastrados] = useState([])
+  const navigate = useNavigate()
+  const [users, setUsers] = useState('')
+  const {userLogado, setUserLogado} = useContext(AppContext)
+
+  const [login, setLogin] = useState({
+    email: '',
+    password: ''
+  })
 
   useEffect(() => {
     fetch('http://localhost:4000/users')
     .then(response => response.json())
-    .then(data => setUsersCadastrados(data))
+    .then(data => setUsers(data))
   }, [])
 
-  console.log(usersCadastrados)
+  const handleChange = (e) => {
+    setLogin({...login, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const logado = users.find(user => user.email === login.email)
+
+    if(!logado){
+      alert('Usuário não encontrado')
+      return 
+    }
+
+    setUserLogado(logado)
+    console.log('usuário encontrado: ', logado)
+    console.log('Cidade n vem hj: ', userLogado)
+  
+    fetch(
+      'http://localhost:4000/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(login)
+      }
+    ).then(async (response) => {
+      if (response.status === 200) {
+        return response.json(); 
+      } else {
+        return response.json().then((data) => {
+          throw new Error(data.message);
+        });
+      }
+    })
+    .then((data) => {
+      sessionStorage.setItem('user', data._id);
+      console.log(data); 
+      navigate('/'); 
+    })
+    .catch((e) => {
+      console.log(e);
+      alert(e
+      );
+    });
+  };
 
   return (
     <section className="login">
@@ -22,26 +76,35 @@ export default function Login() {
         <div className={style.loginFormImg}>
           <img src={Logo} alt="imagem" />
         </div>
-        <form className={style.loginFormForm}>
-          <h1>Login ou Cadastro</h1>
+        <form 
+        className={style.loginFormForm}
+        onSubmit={handleSubmit}
+        >
+          <h1>Login</h1>
           <p>
-            Usuario:
+            Email:
             <input
-              type="text"
-              id="user"
-              placeholder="Digite seu usuário"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu Email"
               required
               className={style.input}
+              value={login.email}
+              onChange={handleChange}
             />
           </p>
           <p>
             Senha:
             <input
               type="password"
-              id="senha"
+              id="password"
+              name="password"
               placeholder="Digite sua senha"
               required
               className={style.input}
+              value={login.password}
+              onChange={handleChange}
             />
           </p>
 
