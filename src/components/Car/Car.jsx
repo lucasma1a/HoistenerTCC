@@ -1,7 +1,5 @@
-import { useContext } from 'react';
 import { PiShoppingCartDuotone } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom";
-import AppContext from '../../context/AppContext.jsx';
+import { Link } from "react-router-dom";
 import style from './Car.module.css';
 
 const Car = ({ car }) => {
@@ -11,14 +9,6 @@ const Car = ({ car }) => {
     }
         
     const formattedPrice = formatPrice(car.price);
-
-    const { addToCart } = useContext(AppContext);
-    const navigate = useNavigate();
-
-    const handleAddToCart = () => {
-        addToCart(car);
-        navigate('/carrinho'); // Redireciona para a página do carrinho
-    };
 
     return (
         <div className={style.containerCarroCard}>
@@ -40,12 +30,13 @@ const Car = ({ car }) => {
                 <Link to={`/detalhes/${car._id}`} className={style.btnLink}>
                     <button className={style.containerCarroCardBtnBtn}>Detalhes</button>
                 </Link>
+                <Link to={`/compra/${car._id}`}>
                 <button 
                     className={style.containerCarroCardBtnBtn}
-                    onClick={handleAddToCart}
                 >
-                    <PiShoppingCartDuotone size={25}/>Comprar agora
+                    <PiShoppingCartDuotone size={25}/>Reservar agora
                 </button>
+                </Link>
             </div>
         </div>
     );
