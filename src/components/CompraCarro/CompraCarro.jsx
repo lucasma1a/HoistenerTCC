@@ -1,19 +1,51 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AppContext from '../../context/AppContext';
 import style from './CompraCarro.module.css';
  
 const CompraCarro = ({ car }) => {
- 
-    const [entrada, setEntrada] = useState('')
-    console.log(entrada)
+    
+    const navigate = useNavigate()
+    const {reserva ,setReserva} = useContext(AppContext)
+
+    let getId = sessionStorage.getItem('id')
+    let getToken = sessionStorage.getItem('token')
  
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if(!getId && !getToken){
+            alert('Você deve realizar o login para reservar um carro')
+            navigate('/login')
+        } else {
+        alert('Reserva efetuada com sucesso')
+        setReserva((count) => count += 1)
+        navigate('/login')
+        }
     }
+
+    const handleDelete = (id) => {
+
+        if(!getId && !getToken){
+            return
+        } else {
+            fetch(`http://localhost:4000/car/${id}`, {
+                method: 'DELETE',
+            }).then((response) => {
+                if(response.status === 200){
+                    console.log('Mikael esteve aki')
+                }
+            })
+        }
+    }
+
+    console.log('Reserva: ', reserva)
+
     function formatPrice(price) {
         return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
     
-      const formattedPrice = formatPrice(car.price);
+    const formattedPrice = formatPrice(car.price);
     return (
         <>
             <section className={style.container}>
@@ -47,35 +79,54 @@ const CompraCarro = ({ car }) => {
                     <form onSubmit={handleSubmit}>
                         <label >
                             Nome:
-                            <input type="text" placeholder='Digite seu nome' />
+                            <input type="text" 
+                            placeholder='Digite seu nome' 
+                            required={true}
+                            />
                         </label>
  
                         <label >
                             E-mail:
-                            <input type="email" placeholder='Digite seu email' />
+                            <input type="email" 
+                            placeholder='Digite seu email'
+                            required={true}
+                            />
                         </label>
  
                         <label >
                             Telefone:
-                            <input type="text" placeholder='Digite seu telefone' />
+                            <input type="text" 
+                            placeholder='Digite seu telefone' 
+                            required={true}
+                            />
                         </label>
  
                         <label >
                             CPF:
-                            <input type="number" placeholder='Digite seu CPF' />
+                            <input type="number" 
+                            placeholder='Digite seu CPF' 
+                            required={true}
+                            />
                         </label>
  
                         <label >
                             Data de Nascimento:
-                            <input type="date" placeholder='Insira sua data de nascimento' />
+                            <input type="date" 
+                            placeholder='Insira sua data de nascimento' 
+                            max="2006-12-31"
+                            required={true}
+                            />
                         </label>
  
                         <label >
                             Digite seu CEP:
-                            <input type="number" placeholder='Insira seu CEP' />
+                            <input type="number" 
+                            placeholder='Insira seu CEP' 
+                            required={true}
+                            />
                         </label>
  
-                        <button>Reservar Carro</button>
+                        <button onClick={() => handleDelete(car._id)}>Reservar Carro</button>
  
                     </form>
                 </div>
