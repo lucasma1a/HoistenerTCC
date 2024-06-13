@@ -1,6 +1,6 @@
 .containerCarroCard {
     width: 22%;
-    height: 110vh;
+    height: 86vh;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
 
 .containerCarroCardImage img{
     width: 100%;
-    height: 300px;
+    height: 400px;
 }
 
 .containerCarroCardImage h1{
@@ -46,7 +46,7 @@
 }
 
 .containerCarroCardPrice{
-    margin-top: 87%;
+    margin-top: 95%;
     display: flex;
     text-align: center;
     justify-items: center;
@@ -118,11 +118,22 @@
     text-decoration: none;
 }
 
-@media(min-width: 320px) and (max-width: 519px) {
+@media(min-width: 320px) and (max-width: 519px){
     .containerCarroCard{
         margin: 0 ;
-        width: 60%;
-        height: 130vh;
+        width: 70%;
+    }
+    .containerCarroCardPrice{
+        margin-top: 94%;
+        padding-bottom: 20px;
+    }
+}
+
+@media(min-width: 520px) and (max-width: 950px) {
+    .containerCarroCard{
+        margin: 0 ;
+        width: 45%;
+        height: 75vh;
     }
     .containerCarroCardBtn{
         margin-top: 0;
@@ -132,37 +143,49 @@
     }
 
     .containerCarroCardPrice{
-        margin-top: 100%;
+        margin-top: 85%;
         padding-bottom: 20px;
+    }
+    .containerCarroCardImage img{
+        height: 350px;
+    }
+    .containerCarroCardName{
+        margin-top: 30px;
     }
     
 }
 
-@media (min-width: 520px) and (max-width: 768px){
+@media (min-width: 951px) and (max-width: 1100px){
     .containerCarroCard{
         margin: 0 ;
-        width: 50%;
-        height: 128vh;
+        width: 40%;
+        height: 78vh;
     }
     .containerCarroCardBtn{
         margin-top: 5%;
     }
     .containerCarroCardPrice{
-        margin-top: 50%;
+        margin-top: 90%;
+    }
+    .containerCarroCardImage img{
+        height: 400px;
     }
     
 }
 
-@media (min-width: 769px) and (max-width: 1000px){
+@media (min-width: 1101px) and (max-width: 1420px){
     .containerCarroCard{
         margin: 0 ;
-        width: 50%;
-        height: 130vh;
+        width: 30%;
+        height: 88vh;
     }
     .containerCarroCardBtn{
         margin-top: 10%;
     }
     .containerCarroCardPrice{
-        margin-top: 50%;
+        margin-top: 100%;
+    }
+    .containerCarroCardImage img{
+        height: 450px;
     }
 }
