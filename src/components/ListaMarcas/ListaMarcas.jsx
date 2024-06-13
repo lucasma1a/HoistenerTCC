@@ -1,4 +1,4 @@
-import Marcas from '../Marcas/Marcas'
+import Marcas from '../Marcas/Marcas';
 import CarroAston from "./img/astonmartin.jpg";
 import CarroAudi from "./img/audi.jpg";
 import CarroBMW from "./img/bmw.jpg";
@@ -13,34 +13,40 @@ export default function ListaMarcas(){
     const marcas = [
         {
         marca: 'BMW',
-        imagem: CarroBMW    
+        imagem: CarroBMW,
+        rota: 'bmw'    
         },
         {
         marca: 'ASTON',
-        imagem: CarroAston    
+        imagem: CarroAston,    
+        rota: 'aston'    
         },
         {
         marca: 'AUDI',
-        imagem: CarroAudi    
+        imagem: CarroAudi,
+        rota: 'audi'        
         },
         {
         marca: 'HYUNDAI',
-        imagem: CarroHyundai    
+        imagem: CarroHyundai,
+        rota: 'hyundai'        
         },
         {
         marca: 'MERCEDES',
-        imagem: CarroMeca    
+        imagem: CarroMeca,
+        rota: 'meca'        
         },
         {
         marca: 'VOLKSWAGEN',
-        imagem: CarroVolks    
+        imagem: CarroVolks,
+        rota: 'volks'        
         },
     ]
 
     return(
         <>
         {marcas.map((marca, index) => {
-                return <Marcas key={index} imagem={marca.imagem} marca={marca.marca} linkado={marca.marca}/>
+                return <Marcas key={index} imagem={marca.imagem} marca={marca.marca} linkado={marca.rota}/>
             })}
         </>
     )
