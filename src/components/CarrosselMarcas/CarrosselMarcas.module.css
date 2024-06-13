@@ -1,0 +1,15 @@
+.container-carrossel-marcas{
+    width: 90%;
+    margin: 0 auto;
+}
+.container-carrossel-marca-slide{
+    height: 65vh;
+    width: 100%;
+}
+
+
+@media(min-width: 320px) and (max-width: 519px){
+    .container-carrossel{
+        display: block;
+    }
+}
