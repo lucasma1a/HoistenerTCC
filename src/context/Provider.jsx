@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AppContext from './AppContext.jsx';
 
 export const Provider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const [reserva, setReserva] = useState(0)
     const [userLogado, setUserLogado] = useState({
         name: '',
         password: '',
@@ -11,7 +11,9 @@ export const Provider = ({ children }) => {
 
     const value = {
         userLogado,
-        setUserLogado
+        setUserLogado,
+        reserva,
+        setReserva
     };
 
     return (

@@ -14,7 +14,7 @@ export default function Nav()
 
     const navRef = useRef();
 
-    const getId = sessionStorage.getItem('user')
+    let getId = sessionStorage.getItem('user')
 
     if(userLogado){
         console.log('molina n vem hj')
@@ -46,7 +46,7 @@ export default function Nav()
                     </a>
                     <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                         <MdAccountCircle size={25}/>
-                        {userLogado ? (<p>{`${userLogado.name}`}</p>): <p></p>}
+                        {userLogado ? (<p>{` ${userLogado.name}`}</p>): null}
                     </NavLink>
 
                     <button className="nav-bar-btn-fechar" onClick={mostrarNavBar}>

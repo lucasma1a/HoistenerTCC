@@ -63,10 +63,10 @@ export default function Garagem() {
             
 
             <div className="container-carro">
-                {testeCarro.map(carro => {
+                {/* {testeCarro.map(carro => {
                     return <Car key={carro.id} car={carro}/>
-                })}                   
-            {/*{carrosFiltrados.length ? (
+                })}                    */}
+            {carrosFiltrados.length ? (
                 carrosFiltrados.map(carro => (
                     <Car
                         key={carro._id}
@@ -75,7 +75,7 @@ export default function Garagem() {
                 ))
             ) : (
                 <ErroBusca texto={texto}/>
-            )}*/}
+            )}
 
             </div>
         </>

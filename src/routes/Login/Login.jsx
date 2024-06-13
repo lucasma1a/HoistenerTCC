@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../assets/hoistener-logo1.png";
+import Logo from "../../assets/hoistener-logo1.svg";
 import UserLogado from "../../components/UserLogado/UserLogado";
 import AppContext from "../../context/AppContext";
 import "../../css/style.css";
