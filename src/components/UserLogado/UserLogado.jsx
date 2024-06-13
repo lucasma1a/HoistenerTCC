@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 import style from './UserLogado.module.css';
 
 const UserLogado = ({loggedUser}) => {
+
+  const {reserva} = useContext(AppContext)
 
   const handleLogout = () => {
     sessionStorage.removeItem('id');
@@ -17,7 +20,7 @@ const UserLogado = ({loggedUser}) => {
 
         <div className={style.containerInfo}>
           <p><b>Seu Email:</b> {loggedUser.email}</p>
-          <p><b>Sua Reserva:</b> ainda n tem</p>
+          <p><b>Suas Reservas:</b> {reserva ? reserva: <p>Você ainda não reservou nenhum carro</p>}</p>
         </div>
 
         <div className={style.containerBtns}>
