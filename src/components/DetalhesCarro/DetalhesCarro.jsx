@@ -35,7 +35,7 @@ export default function DetalhesCarro({infoCar}){
                 <div className={style.desc}>
                     <ul>
                         <li><b>Placa:</b> {infoCar.plate}</li>
-                        <li><b>Data de lançamento:</b> {infoCar.releaseDate}</li>
+                        <li><b>Data de lançamento:</b> {new Date(infoCar.releaseDate).toLocaleDateString()}</li>
                         <li><b>Cor:</b> {infoCar.color}</li>
                     </ul>
 
@@ -48,7 +48,9 @@ export default function DetalhesCarro({infoCar}){
             </div>
 
             <div className={style.btns}>
-                <button onClick={handleAddToCart}> <PiShoppingCartDuotone size={25}/>Adicionar ao Carrinho</button>
+                <Link to={`/compra/${infoCar._id}`}>
+                <button> <PiShoppingCartDuotone size={25}/>Reservar agora</button>
+                </Link>
                 <Link to='/garagem' className={style.btnLink}>
                 <button>Voltar para garagem</button>
                 </Link>

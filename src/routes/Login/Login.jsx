@@ -15,9 +15,6 @@ export default function Login() {
   const getId = sessionStorage.getItem('id')
   const getToken = sessionStorage.getItem('token')
 
-  console.log('Id: ',getId)
-  console.log('token:', getToken)
-
   const [login, setLogin] = useState({
     email: '',
     password: ''
@@ -44,8 +41,6 @@ export default function Login() {
     }
 
     setUserLogado(logado)
-    console.log('usuário encontrado: ', logado)
-    console.log('Cidade n vem hj: ', userLogado)
   
     fetch(
       'http://localhost:4000/login',
@@ -59,7 +54,6 @@ export default function Login() {
     ).then(async (response) => {
       if (response.status === 200) {
         alert('Login Efetuado')
-        console.log('user logged', logado)
         navigate('/')
         return response.json(); 
       } else {
@@ -70,8 +64,7 @@ export default function Login() {
     })
     .then((data) => {
       sessionStorage.setItem('id', data._id);
-      sessionStorage.setItem('token', data.token);
-      console.log(data); 
+      sessionStorage.setItem('token', data.token); 
     })
     .catch((e) => {
       console.log(e);

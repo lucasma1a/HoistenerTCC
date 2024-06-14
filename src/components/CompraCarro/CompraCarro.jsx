@@ -6,11 +6,11 @@ import style from './CompraCarro.module.css';
 const CompraCarro = ({ car }) => {
     
     const navigate = useNavigate()
-    const {reserva ,setReserva} = useContext(AppContext)
+    const {reserva , setReserva} = useContext(AppContext)
 
     let getId = sessionStorage.getItem('id')
     let getToken = sessionStorage.getItem('token')
- 
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -19,7 +19,9 @@ const CompraCarro = ({ car }) => {
             navigate('/login')
         } else {
         alert('Reserva efetuada com sucesso')
-        setReserva((count) => count += 1)
+        setReserva((prevReserva) => [...prevReserva, `${car.mark} ${car.model} ${formattedPrice}`])
+        console.log(reserva)
+        handleDelete(car._id)
         navigate('/login')
         }
     }
@@ -31,10 +33,8 @@ const CompraCarro = ({ car }) => {
         } else {
             fetch(`http://localhost:4000/car/${id}`, {
                 method: 'DELETE',
-            }).then((response) => {
-                if(response.status === 200){
-                    console.log('Mikael esteve aki')
-                }
+            }).then(() => {
+                console.log('Carro da exclusão', id)
             })
         }
     }
@@ -126,7 +126,7 @@ const CompraCarro = ({ car }) => {
                             />
                         </label>
  
-                        <button onClick={() => handleDelete(car._id)}>Reservar Carro</button>
+                        <button>Reservar Carro</button>
  
                     </form>
                 </div>

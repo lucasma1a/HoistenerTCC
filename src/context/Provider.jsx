@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AppContext from './AppContext.jsx';
 
 export const Provider = ({ children }) => {
-    const [reserva, setReserva] = useState(0)
+    const [reserva, setReserva] = useState([])
     const [userLogado, setUserLogado] = useState({
         name: '',
         password: '',
