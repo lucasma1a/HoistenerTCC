@@ -28,7 +28,7 @@ function Carrossel(){
             <Swiper
                 slidesPerView={1}
                 pagination={{clickable: true}}
-                navigation
+                
             >
                 {banner.map( (item) => (
                 <SwiperSlide key={item.id}>
