@@ -578,6 +578,28 @@ table {
     height: 100vh;
 }
 
+.erro{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.erro-home{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
 
 /*RESPONSIVIDADE*/
 
