@@ -1,0 +1,9 @@
+.container{
+    width: 100%;
+    background-color: black;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    color: black;
+    padding: 3rem 2rem;
+}

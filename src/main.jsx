@@ -12,6 +12,7 @@ import Aston from './routes/Aston.jsx';
 import Audi from './routes/Audi.jsx';
 import Bmw from './routes/Bmw.jsx';
 import Carrinho from './routes/Carrinho/Carrinho.jsx';
+import Compra from './routes/Compra/Compra.jsx';
 import Detalhes from './routes/Detalhes/Detalhes.jsx';
 import Error from './routes/Error.jsx';
 import Garagem from './routes/Garagem.jsx';
@@ -22,13 +23,13 @@ import Login from './routes/Login/Login.jsx';
 import Meca from './routes/Meca.jsx';
 import Produtos from './routes/Produtos.jsx';
 import Volks from './routes/Volks.jsx';
-import Compra from './routes/Compra/Compra.jsx'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { register } from 'swiper/element/bundle';
+import Alterar from './routes/Alterar/Alterar.jsx';
 import Cadastro from './routes/Cadastro/Cadastro.jsx';
 
 register();
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
         { path:'/carrinho', element: <Carrinho />},
         { path:'/cadastro', element: <Cadastro />},
         { path:'/compra/:id', element: <Compra />},
+        { path:'/alterar/:id', element: <Alterar />},
       ],
     },
   ]);
