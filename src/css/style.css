@@ -178,6 +178,7 @@
     background-color: black;
     color: white;
     padding: 2rem 2rem;
+    padding-bottom: 8%;
   }
 .login p {
     margin-top: 30px;
@@ -334,6 +335,9 @@
 
 /*FOOTER*/
 
+.footer{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .footer-container{
     display: flex;
@@ -362,7 +366,6 @@
     text-decoration: none;
     flex-direction: column;
     margin-top: 80px;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
 }
 
@@ -375,7 +378,6 @@
     text-decoration: none;
     flex-direction: column;
     margin-top: 40px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .footer-container-1-info2{
     display: flex;
@@ -404,7 +406,6 @@
     justify-content: center;
     display: flex;
     margin-top: 150px;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     color: black;
     text-decoration: none;
@@ -430,7 +431,6 @@
     justify-content: center;
     display: flex;
     margin-top: 90px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .footer-container-3-info1{
@@ -440,7 +440,6 @@
     display: flex;
     margin-top: 90px;
     font-size: 2.0rem;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .lista-carros{
@@ -479,45 +478,6 @@
     width: 15%;
     cursor: pointer;
 }
-
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2%;
-    font-size: 18px;
-    text-align: left;
-    height: auto;
-  }
-  
-  table thead {
-    background-color: blue;
-    color: #ffffff;
-  }
-  
-  table thead th {
-    padding: 12px 15px;
-  }
-  
-  table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  table tbody td {
-    padding: 12px 15px;
-  }
-  
-  table tbody td a, table tbody td button {
-    color: #009879;
-    text-decoration: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-  
-  table tbody td a:hover, table tbody td button:hover {
-    color: #006f5d;
-  }
   
 .form{
     width: 50%;

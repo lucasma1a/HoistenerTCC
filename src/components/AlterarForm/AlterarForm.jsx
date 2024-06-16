@@ -83,6 +83,7 @@ const AlterarForm = () => {
             type="password"
             placeholder='Digite sua senha...'
             onChange={(e) => setOldPassword(e.target.value)}
+            required
           />
         </label>
 
@@ -91,8 +92,9 @@ const AlterarForm = () => {
           <input
             type="password"
             placeholder='Digite a nova senha...'
-            name="password" // Adicione esta linha
+            name="password" 
             onChange={handlePasswordChange}
+            required
           />
         </label>
 

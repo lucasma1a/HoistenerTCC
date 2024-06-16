@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import style from './UserLogado.module.css';
@@ -7,11 +7,6 @@ const UserLogado = ({ loggedUser }) => {
   const { id } = useParams()
   const { reserva } = useContext(AppContext);
   console.log(reserva);
-
-  useEffect(() => {
-    fetch('http://localhost:4000/users')
-    
-  })
 
   const handleLogout = () => {
     sessionStorage.removeItem('id');
@@ -45,8 +40,8 @@ const UserLogado = ({ loggedUser }) => {
           <button>Alterar senha</button>
         </Link>
        
-       <Link>
-          <button>Alterar E-mail</button>
+       <Link to={`/alterardados/${loggedUser._id}`}>
+          <button>Alterar dados da conta</button>
        </Link>
         <button onClick={handleLogout}>Sair</button>
       </div>

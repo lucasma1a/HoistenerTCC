@@ -118,7 +118,7 @@ export default function Login() {
           <div className={style.cadastro}>
             <p style={{ fontSize: 14 }}>Não possui uma conta?</p>
             <Link to="/cadastro" className={style.linkCadastro}>
-              <button>Cadastrar</button>
+              <button>Cadastre-se</button>
             </Link>
           </div>
         </form>
