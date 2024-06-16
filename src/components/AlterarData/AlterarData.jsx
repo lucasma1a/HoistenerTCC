@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import AppContext from '../../context/AppContext.jsx';
 import style from './AlterarData.module.css';
 
 const AlterarData = () => {
 
+    const{setUserLogado} = useContext(AppContext)
     const navigate = useNavigate()
     const {id} = useParams()
     const [users, setUsers] = useState([])
-    const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const [usuario, setUsuario] = useState({
         name: '',
         email: '',
+        password: '',
         cpf: '',
         cep: '',
         logradouro: '',
@@ -74,7 +76,7 @@ const AlterarData = () => {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({email: email, password: password})
+          body: JSON.stringify({email: email, password: usuario.password})
         }).then((response) => {
           if(response.status === 200){
             fetch(`http://localhost:4000/user/${id}`,{
@@ -82,10 +84,14 @@ const AlterarData = () => {
               headers: {
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify({usuario, password: password})
+              body: JSON.stringify(usuario)
             }).then((response) => {
               if(response.status === 200){
                 alert('Dados alterados com sucesso')
+                setUserLogado({
+                  name: usuario.name,
+                  password: usuario.password
+                })
                 navigate('/login')
                 return response.json()
               }
@@ -210,8 +216,9 @@ const AlterarData = () => {
             <input
               type="password"
               placeholder='Digite sua senha'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={usuario.password}
+              onChange={handleChange}
+              name='password'
               required
             />
           </label>
