@@ -1,10 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import style from './UserLogado.module.css';
 
 const UserLogado = ({ loggedUser }) => {
+  const { id } = useParams()
   const { reserva } = useContext(AppContext);
   console.log(reserva);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/users')
+    
+  })
 
   const handleLogout = () => {
     sessionStorage.removeItem('id');
@@ -34,8 +41,13 @@ const UserLogado = ({ loggedUser }) => {
       </div>
 
       <div className={style.containerBtns}>
-        <button>Alterar senha</button>
-        <button>Alterar E-mail</button>
+        <Link to={`/alterar/${loggedUser._id}`}>
+          <button>Alterar senha</button>
+        </Link>
+       
+       <Link>
+          <button>Alterar E-mail</button>
+       </Link>
         <button onClick={handleLogout}>Sair</button>
       </div>
     </div>
