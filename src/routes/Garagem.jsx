@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import styleBusca from '../components/Busca/Busca.module.css';
 import Car from '../components/Car/Car.jsx';
@@ -8,76 +7,65 @@ import '../css/style.css';
 
 export default function Garagem() {
 
-    const [carros, setCarros] = useState([])
+    const [carros, setCarros] = useState([]);
+    const [reservas, setReservas] = useState([]);
     const [busca, setBusca] = useState('');
-    const texto = 'Não há carros com esta marca ou modelo'
-    // const testeCarro = [
-    //     {
-    //         id: 1,
-    //         image: 'https://github.com/welltecnc.png',
-    //         price: 20,
-    //         mark: 'bmw',
-    //         model: 'i8',
-    //         color: 'black'
-    //     }
-    // ]
-
+    const texto = 'Não há carros com esta marca ou modelo';
 
     useEffect(() => {
-      try {
-         fetch("http://localhost:4000/cars")
-          .then((response) => response.json())
-          .then((dados) => setCarros(dados));
-      } catch {
-        console.log('erro ao se conectar com a API')
-      }
+        fetch("http://localhost:4000/cars")
+            .then((response) => response.json())
+            .then((dados) => setCarros(dados))
+            .catch(() => console.log('erro ao se conectar com a API de carros'));
     }, []);
 
-    const carrosFiltrados = carros.filter(carro =>
-        carro.mark.toLowerCase().includes(busca.toLowerCase()) || 
-        carro.model.toLowerCase().includes(busca.toLowerCase())
-    );
+    useEffect(() => {
+        fetch("http://localhost:4000/reservas")
+            .then((response) => response.json())
+            .then((dados) => setReservas(dados))
+            .catch(e => alert('erro: ', e));
+    }, []);
+
+    const carrosFiltrados = carros
+        .filter(carro => 
+            carro.mark.toLowerCase().includes(busca.toLowerCase()) || 
+            carro.model.toLowerCase().includes(busca.toLowerCase())
+        )
+        .filter(carro => 
+            !reservas.some(reserva => reserva.car.plate === carro.plate)
+        );
 
     const funcBusca = (e) => {
-        setBusca(e.target.value)
-    }
+        setBusca(e.target.value);
+    };
 
-  
-
-    console.log(carros)
-    return(
+    return (
         <>
-                     
             <section className="marcas">
-            <ListaMarcas/>
+                <ListaMarcas />
             </section>
 
             <div className="container-busca">
-            <input
-                className={styleBusca.busca}
-                value={busca}
-                onChange={funcBusca}
-                placeholder="Digite a marca ou modelo do carro"
-            />
+                <input
+                    className={styleBusca.busca}
+                    value={busca}
+                    onChange={funcBusca}
+                    placeholder="Digite a marca ou modelo do carro"
+                />
             </div>
-            
 
             <div className="container-carro">
-                {/* {testeCarro.map(carro => {
-                    return <Car key={carro.id} car={carro}/>
-                })}       */}
-            {carrosFiltrados.length ? (
-                carrosFiltrados.map(carro => (
-                    <Car
-                        key={carro._id}
-                        car={carro}
-                    />
-                ))
-            ) : (
-                <ErroBusca texto={texto}/>
-            )}
-
+                {carrosFiltrados.length ? (
+                    carrosFiltrados.map(carro => (
+                        <Car
+                            key={carro._id}
+                            car={carro}
+                        />
+                    ))
+                ) : (
+                    <ErroBusca texto={texto} />
+                )}
             </div>
         </>
-    )
+    );
 }
