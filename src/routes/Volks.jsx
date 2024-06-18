@@ -1,41 +1,44 @@
-import CarroBMW from "../assets/bmw.jpg";
-import CarroMeca from "../assets/meca.jpg";
-import CarroAston from "../assets/astonmartin.jpg";
-import CarroAudi from "../assets/audi.jpg";
-import CarroVolks from "../assets/volks.jpg";
-import CarroHyundai from "../assets/hyundai.jpg";
-import { Link } from 'react-router-dom';
-export default function Volks(){
-    return(
-        <>
-            <section className="marcas">
-            <div className="marcas-bmw-garagem">
-                    <img src={CarroBMW} alt="carro1" />
-                    <Link to="/garagem" className="marcas-garagem-name">BMW </Link>
-                </div>                    
-                <div className="marcas-bmw-garagem">
-                    <img src={CarroMeca} alt="carro2" />
-                    <Link to="/garagem" className="marcas-garagem-name">MERCEDES</Link>
-                </div>                    
-                <div className="marcas-bmw-garagem">
-                    <img src={CarroAston} alt="carro3" />
-                <Link to="/garagem" className="marcas-garagem-name">ASTON MARTIN</Link>
-                </div>                                        
-                <div className="marcas-bmw-garagem">
-                    <img src={CarroAudi} alt="carro4" />
-                <Link to="/garagem" className="marcas-garagem-name">AUDI</Link>
-                </div>                                        
-                <div className="marcas-bmw-garagem">
-                    <img src={CarroVolks} alt="carro5" />
-                <Link to="/garagem" className="marcas-garagem-name">VOLKSWAGEN</Link>
-                </div>                                        
-                <div className="marcas-bmw-garagem">
-                    <img src={CarroHyundai} alt="carro6" />
-                <Link to="/garagem" className="marcas-garagem-name">HYUNDAI</Link>
-                </div>                                        
-            </section>
+import { useEffect, useState } from "react";
+import Car from '../components/Car/Car.jsx';
+import ErroBusca from "../components/ErroBusca/ErroBusca.jsx";
+import ListaMarcas from "../components/ListaMarcas/ListaMarcas.jsx";
 
-        </>
-    )
+export default function Volks() {
+  const [carros, setCarros] = useState([]);
 
+  const marca = "Volkswagen";
+  const carrosFiltrados = carros.filter((carro) => carro.mark === marca);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/cars")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setCarros(data);
+      });
+  }, []);
+
+  console.log(carrosFiltrados);
+
+  return (
+    <>
+      <section className="marcas">
+        <ListaMarcas />
+      </section>
+
+      <div className="container-carro">
+                {carrosFiltrados.length ? (
+                    carrosFiltrados.map(carro => (
+                        <Car
+                            key={carro._id}
+                            car={carro}
+                        />
+                    ))
+                ) : (
+                    <ErroBusca texto={''} />
+                )}
+            </div>
+    </>
+  );
 }

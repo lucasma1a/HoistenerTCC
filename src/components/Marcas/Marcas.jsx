@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import style from "./Marcas.module.css";
 
 const Marcas = ({imagem, marca, linkado}) => {
     return(
