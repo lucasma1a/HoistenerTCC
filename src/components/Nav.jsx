@@ -6,6 +6,7 @@ import Logo from '../assets/hoistener-logo1.png';
 import AppContext from "../context/AppContext";
 import style from '../css/Link.module.css';
 import '../css/style.css';
+import MenuHamburguer from "../components/MenuHamburguer/MenuHamburguer";
 
 export default function Nav()
 {
@@ -52,6 +53,8 @@ export default function Nav()
                     <button className="nav-bar-btn-fechar" onClick={mostrarNavBar}>
                         <FaTimes/>
                     </button>
+
+                    <MenuHamburguer/>
 
                     {/* <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                     <FaShoppingCart size={25}/>

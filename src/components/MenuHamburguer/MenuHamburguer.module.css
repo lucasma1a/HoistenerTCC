@@ -1,0 +1,46 @@
+.menuContainer {
+    position: absolute;
+    display: none;
+    height: 100%;
+  }
+  
+  .menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 90vw;
+    margin-top: 10px;
+  }
+  
+  .menuList {
+    position: relative;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    list-style-type: none;
+    height: auto;
+    display: flex;
+    z-index: 1000;
+    margin-top: 20px;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .menuList .navNavbarLink {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-family: sans-serif;
+  }
+  
+  .menuList .linkDestacado {
+    color: white;
+  }
+  @media (max-width: 768px){ 
+    .menuContainer{
+        display:block;
+    }
+  }
+  
