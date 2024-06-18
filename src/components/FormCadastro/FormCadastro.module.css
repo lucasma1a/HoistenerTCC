@@ -51,7 +51,20 @@
 }
 
 @media(min-width: 320px) and (max-width: 768px) {
+    .container{
+        width: 95%;
+        padding-bottom: 20%;
+    }
+
+    .form{ 
+        width: 100%;
+    }
+
     .form label{
         width: 90%;
+    }
+
+    .form label input{
+        width: 100%;
     }
 }
