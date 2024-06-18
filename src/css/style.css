@@ -563,7 +563,16 @@
 
 /*RESPONSIVIDADE*/
 
-@media(min-width: 320px) and (max-width: 519px){
+ @media (max-width: 728px){
+    .login{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    }
+
     .nav-navbar ul .nav-navbar-img img{
         margin-right: 0;
     }

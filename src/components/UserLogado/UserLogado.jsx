@@ -37,7 +37,6 @@ const UserLogado = ({ loggedUser }) => {
       navigate('/garagem')
     })
    })
-
   
 
   return (

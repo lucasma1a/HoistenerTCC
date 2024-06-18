@@ -90,3 +90,35 @@
     width: 52%;
     margin-left: 10%;
 }
+
+@media (max-width: 782px){
+    .loginForm{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .loginFormImg{
+        width: 0px;
+        display: none;
+    }
+
+    .loginFormImg img{
+        display: none;
+    }
+
+    .loginFormForm{
+        width: 100%;
+    }
+
+    .loginFormForm p{
+        font-size: 32px;
+    }
+
+    .loginFormForm button {
+        width: 60%;
+        height: 6.5vh;
+        font-size: 16px;
+    } 
+}
