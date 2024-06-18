@@ -68,3 +68,24 @@
     border: none;
     cursor: pointer;
 }
+
+@media (max-width: 768px){
+    .container{
+        width: 100%;
+        gap: 40px;
+    }
+
+    .containerBtns{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerBtns button{
+        height: 6.5vh;
+        width: 100%;
+    }
+
+    .containerInfo ul li button{
+        height: 6.5vh;
+    }
+}
