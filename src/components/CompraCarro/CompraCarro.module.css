@@ -136,3 +136,46 @@
     font-size: 18px;
     font-weight: 550;
 }
+
+@media (max-width: 768px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .containerCard{
+        width: 100%;
+    }
+
+    .containerImg{
+        width: 100%;
+    }
+     
+    .containerImg img{
+        width: 100%;
+    }
+
+    .form{
+        width: 100%;
+    }
+
+    .form form{
+        width: 100%;
+        gap: 30px;
+    }
+
+    .form form label{
+        width: 100%;
+        padding-right: 12%;
+    }
+
+    .form form label input{
+        width: 100%;
+    }
+
+    .form form button{
+        width: 60%;
+    }
+}

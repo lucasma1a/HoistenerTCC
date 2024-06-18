@@ -72,7 +72,7 @@ const CompraCarro = ({ car }) => {
           <div className={style.containerImg}>
             <img src={car.image} alt={`${car.mark}, ${car.model}`} />
           </div>
-          <div className={style.containerInfo}>
+          {/* <div className={style.containerInfo}>
             <ul className={style.infoTop}>
               <li>carro</li>
               <li>carro</li>
@@ -83,7 +83,7 @@ const CompraCarro = ({ car }) => {
               <li>carro</li>
               <li>carro</li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className={style.form}>
