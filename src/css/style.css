@@ -29,7 +29,7 @@
 }
 
 .nav-navbar.opaque{
-    background-color: black;
+    background-image: linear-gradient(to left bottom, red, blue);
     color: white;
 }
 
