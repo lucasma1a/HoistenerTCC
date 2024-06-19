@@ -1,73 +1,94 @@
 import { useContext, useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { MdAccountCircle } from "react-icons/md";
-import { NavLink } from 'react-router-dom';
-import Logo from '../assets/hoistener-logo1.png';
+import { NavLink } from "react-router-dom";
+import Logo from "../assets/hoistener-logo.png";
+import LogoUm from "../assets/hoistener-logo1.png";
 import AppContext from "../context/AppContext";
-import style from '../css/Link.module.css';
-import '../css/style.css';
+import style from "../css/Link.module.css";
+import "../css/style.css";
 import MenuHamburguer from "../components/MenuHamburguer/MenuHamburguer";
 
-export default function Nav()
-{
-    const {userLogado} = useContext(AppContext)
-    console.log(userLogado)
+export default function Nav() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    const navRef = useRef();
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 10) {
+        setIsScrolled(true);
+        
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-    let getId = sessionStorage.getItem('user')
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const { userLogado } = useContext(AppContext);
+  console.log(userLogado);
 
-    if(userLogado){
-        console.log('molina n vem hj')
-    } else {
-        console.log('ashu')
-    }
+  const navRef = useRef();
 
-    const mostrarNavBar = () => {
-        navRef.current.classlist.toggle("responsive_nav")
-    }
+  let getId = sessionStorage.getItem("user");
 
-    return (
-        <>
-        <a id="Home"></a>
-        <header className="nav">
-            <nav className='nav-navbar'>
-                <ul>
-                    <NavLink to="/" className={`nav-navbar-img`} data-test-id>
-                        <img src={Logo}></img>        
-                    </NavLink>
-                    <NavLink to="/" className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
-                        Home
-                    </NavLink>
-                    <NavLink to="/garagem" className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
-                        Garagem
-                    </NavLink>
-                    <a href='#Contato' className={style.navNavbarLink} data-test-id>
-                        Contato
-                    </a>
-                    <NavLink to="/login"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
-                        <MdAccountCircle size={25}/>
-                        {userLogado ? (<p>{` ${userLogado.name}`}</p>): null}
-                    </NavLink>
+  if (userLogado) {
+    console.log("molina n vem hj");
+  } else {
+    console.log("ashu");
+  }
 
-                    <button className="nav-bar-btn-fechar" onClick={mostrarNavBar}>
-                        <FaTimes/>
-                    </button>
 
-                    <MenuHamburguer/>
+  return (
+    <>
+      <a id="Home"></a>
+      <header className="nav">
+        <nav className={`nav-navbar ${isScrolled ? 'opaque' : ""}`}>
+          <ul>
+            <NavLink to="/" className={`nav-navbar-img ${isScrolled ? 'opaque' : ""}`} data-test-id>
+              <img src={isScrolled ? LogoUm : Logo}></img>
+            </NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+              }
+              data-test-id
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/garagem"
+              className={({ isActive }) =>
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+              }
+              data-test-id
+            >
+              Garagem
+            </NavLink>
+            <a href="#Contato" className={`${style.navNavbarLink} ${!isScrolled ? style.linkSemScroll : ""}`}  data-test-id>
+              Contato
+            </a>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+              }
+              data-test-id
+            >
+              <MdAccountCircle size={25} />
+              {userLogado ? <p>{` ${userLogado.name}`}</p> : null}
+            </NavLink>
 
-                    {/* <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
+            <MenuHamburguer />
+
+            {/* <NavLink to="/carrinho"  className={({isActive}) => `${style.navNavbarLink} ${isActive ? style.linkDestacado : ''}`} data-test-id>
                     <FaShoppingCart size={25}/>
                     </NavLink> */}
-
-                </ul>
-            </nav>
-            <button className="nav-bar-btn" onClick={mostrarNavBar}>
-                <FaBars/>
-            </button>
-        </header>
-        </>
-    )
-    
+          </ul>
+        </nav>
+      </header>
+    </>
+  );
 }
-

@@ -3,17 +3,27 @@
     margin: 20px;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
-    color: rgb(202, 189, 189);
+    color: white;
     text-decoration: none;
     text-align: center;
     align-items: center;
     gap: 5px;
 }
 
+
+
 .linkDestacado{
-    text-decoration: underline;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: 600;
+    background-color: red;
+    padding: 5px;
+    transition: 0.5s ease;
+}
+
+.linkSemScroll{
+    color: black;
+    font-weight: 600;
+    
 }
 
 @media (max-width: 768px){

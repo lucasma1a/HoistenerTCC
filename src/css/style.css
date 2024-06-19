@@ -12,6 +12,7 @@
 .nav{
     width: 100%;
     z-index: 9999;
+    position: fixed;
 }
 
 .nav ul{
@@ -23,8 +24,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+
+.nav-navbar.opaque{
     background-color: black;
-    border-bottom: 2px solid white;
+    color: white;
 }
 
 .nav-navbar ul{
