@@ -10,7 +10,7 @@ export default function Footer() {
             <footer className="footer">
                 <a id="Contato"></a>
                 <section className="footer-container">
-                <container className="footer-container-1">
+                <div className="footer-container-1">
                     <ul>
                     <li className="footer-container-1-info">
                         Rua Guaipá 678, São Paulo, SP, 05089-001
@@ -22,8 +22,8 @@ export default function Footer() {
                         Copyright 2024 Todos os direitos reservados
                     </li>
                     </ul>
-                </container>                    
-                <container className="footer-container-2">
+                </div>                    
+                <div className="footer-container-2">
                     <ul>
                     <li className="footer-container-2-info">
                         <a href="#Home">Menu</a>
@@ -32,8 +32,8 @@ export default function Footer() {
                         <a href="/">Sobre Nós</a>
                     </li>
                     </ul>
-                </container>                    
-                <container className="footer-container-3">
+                </div>                    
+                <div className="footer-container-3">
                     <ul>
                         <li className="footer-container-3-info1">
                             Nossas Redes
@@ -47,7 +47,7 @@ export default function Footer() {
                             @hoistener__
                         </li>
                     </ul>
-                </container>                                        
+                </div>                                        
             </section>
             </footer>
         </>
