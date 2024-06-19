@@ -50,7 +50,7 @@ const UserLogado = ({ loggedUser }) => {
           <ul>
             {foundReserva.map((re, index) => (
               <li key={index}>
-                {re.car.mark} {re.car.model} Placa: {re.car.plate} 
+                {re.car.mark} {re.car.model} <br /> Placa: {re.car.plate} 
                 <div className={style.containerInfoBtn}>
                   <button onClick={handleDelete.bind(this, re._id)}>Cancelar reserva</button>
                 </div>

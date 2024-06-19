@@ -219,10 +219,10 @@ const AlterarData = () => {
           </label>
 
           <label>
-            Senha:
+            Senha Atual:
             <input
               type="password"
-              placeholder='Digite sua senha'
+              placeholder='Digite sua senha para confirmar'
               value={usuario.password}
               onChange={handleChange}
               name='password'

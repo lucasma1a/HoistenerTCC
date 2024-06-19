@@ -116,15 +116,23 @@
 .btnLink{
     text-decoration: none;
 }
-
-@media(min-width: 320px) and (max-width: 519px){
+@media (max-width: 519px){
     .containerCarroCard{
         margin: 0 ;
         width: 81%;
+        height: 98vh;
     }
+
+    .containerCarroCardImage {
+        height: 49.5vh;
+    }
+    
+    .containerCarroCardImage img{
+        height: 49.5vh;
+    }
+
     .containerCarroCardPrice{
         margin-top: 94%;
-        padding-bottom: 20px;
     }
 }
 

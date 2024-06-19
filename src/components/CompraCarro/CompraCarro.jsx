@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 import style from "./CompraCarro.module.css";
@@ -6,10 +6,46 @@ import style from "./CompraCarro.module.css";
 const CompraCarro = ({ car }) => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [users, setUsers] = useState([])
   const { reserva, setReserva } = useContext(AppContext);
-
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+    logradouro: '',
+    bairro: '',
+    localidade: '',
+    uf: ''
+  })
   let getId = sessionStorage.getItem("id");
   let getToken = sessionStorage.getItem("token");
+
+  useEffect(() => {
+    fetch('http://localhost:4000/users/')
+      .then(response => response.json())
+      .then(data => setUsers(data))
+  }, [])
+
+  useEffect(() => {
+    if (users.length > 0 && getId) {
+      const foundUser = users.find(user => user._id === getId)
+      if (foundUser) {
+        setUser({
+          ...foundUser,
+          password: ''
+        })
+      }
+    }
+  }, [users, getId])
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setUser(prevUser => ({
+      ...prevUser,
+      [name]: value
+    }))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,7 +123,7 @@ const CompraCarro = ({ car }) => {
         </div>
 
         <div className={style.form}>
-          <h3>Digite suas informações para reservar o carro</h3>
+          <h3>{!getId && !getToken ? 'Faça login para reservar um carro' : 'Confirme suas informações abaixo'}</h3>
 
           <form onSubmit={handleSubmit}>
             <label>
@@ -96,6 +132,9 @@ const CompraCarro = ({ car }) => {
                 type="text"
                 placeholder="Digite seu nome"
                 required={true}
+                onChange={handleChange}
+                value={user.name}
+                name='name'
               />
             </label>
 
@@ -105,6 +144,9 @@ const CompraCarro = ({ car }) => {
                 type="email"
                 placeholder="Digite seu email"
                 required={true}
+                onChange={handleChange}
+                value={user.email}
+                name='email'
               />
             </label>
 
@@ -114,6 +156,7 @@ const CompraCarro = ({ car }) => {
                 type="text"
                 placeholder="Digite seu telefone"
                 required={true}
+                onChange={handleChange}
               />
             </label>
 
@@ -123,6 +166,9 @@ const CompraCarro = ({ car }) => {
                 type="number"
                 placeholder="Digite seu CPF"
                 required={true}
+                onChange={handleChange}
+                value={user.cpf}
+                name='cpf'
               />
             </label>
 
@@ -133,6 +179,7 @@ const CompraCarro = ({ car }) => {
                 placeholder="Insira sua data de nascimento"
                 max="2006-12-31"
                 required={true}
+                onChange={handleChange}
               />
             </label>
 
@@ -142,6 +189,7 @@ const CompraCarro = ({ car }) => {
                 type="number"
                 placeholder="Insira seu CEP"
                 required={true}
+                onChange={handleChange}
               />
             </label>
 

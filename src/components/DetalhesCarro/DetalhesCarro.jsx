@@ -20,7 +20,7 @@ export default function DetalhesCarro({infoCar}){
             <div className={style.detalhesInfo}>
                 <h1>{infoCar.mark} {infoCar.model}</h1>
 
-                <h2>R$ {formattedPrice}</h2>
+                <h2>{formattedPrice}</h2>
 
                 <div className={style.desc}>
                     <ul>
