@@ -87,4 +87,12 @@
         height: 40vh;
         border-radius: 8px;
     }
+
+    .detalhesInfo{
+        width: 100%;
+    }
+
+    .desc{
+        width: 100%;
+    }
 }

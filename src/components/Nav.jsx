@@ -1,13 +1,12 @@
-import { useContext, useRef } from "react";
-import { useState, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { MdAccountCircle } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/hoistener-logo.png";
 import LogoUm from "../assets/hoistener-logo1.png";
+import MenuHamburguer from "../components/MenuHamburguer/MenuHamburguer";
 import AppContext from "../context/AppContext";
 import style from "../css/Link.module.css";
 import "../css/style.css";
-import MenuHamburguer from "../components/MenuHamburguer/MenuHamburguer";
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
