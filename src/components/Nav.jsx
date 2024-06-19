@@ -10,6 +10,15 @@ import "../css/style.css";
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () =>{
+    setIsHovered(true);
+  }
+
+  const handleMouseLeave = () =>{
+    setIsHovered(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +54,13 @@ export default function Nav() {
       <header className="nav">
         <nav className={`nav-navbar ${isScrolled ? 'opaque' : ""}`}>
           <ul>
-            <NavLink to="/" className={`nav-navbar-img ${isScrolled ? 'opaque' : ""}`} data-test-id>
-              <img src={isScrolled ? LogoUm : Logo}></img>
+            <NavLink to="/" className={`nav-navbar-img`} data-test-id>
+              <img src={LogoUm}></img>
             </NavLink>
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} `
               }
               data-test-id
             >
@@ -60,24 +69,24 @@ export default function Nav() {
             <NavLink
               to="/garagem"
               className={({ isActive }) =>
-                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""}`
               }
               data-test-id
             >
               Garagem
             </NavLink>
-            <a href="#Contato" className={`${style.navNavbarLink} ${!isScrolled ? style.linkSemScroll : ""}`}  data-test-id>
+            <a href="#Contato" className={`${style.navNavbarLink}`}  data-test-id>
               Contato
             </a>
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""} ${!isScrolled ? style.linkSemScroll : ""}`
+                `${style.navNavbarLink} ${isActive ? style.linkDestacado : ""}`
               }
               data-test-id
             >
-              <MdAccountCircle size={25} />
-              {userLogado ? <p>{` ${userLogado.name}`}</p> : null}
+              <MdAccountCircle size={30} />
+              {userLogado ? <p>{` ${userLogado.name} `}</p> : null}
             </NavLink>
 
             <MenuHamburguer />
