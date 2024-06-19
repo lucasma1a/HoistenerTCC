@@ -90,12 +90,18 @@ const AlterarData = () => {
                 alert('Dados alterados com sucesso')
                 setUserLogado({
                   name: usuario.name,
-                  password: usuario.password
+                  password: usuario.password,
+                  email: usuario.email
                 })
                 navigate('/login')
                 return response.json()
               }
-            }).catch((e) => {
+            }).then((data) => {
+              console.log('sua data aki', data)
+              sessionStorage.setItem('id', data._id);
+              sessionStorage.setItem('token', data.token);
+            })
+            .catch((e) => {
               alert('Erro: ', e)
             })
           } 

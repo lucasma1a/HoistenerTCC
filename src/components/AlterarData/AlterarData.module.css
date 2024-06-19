@@ -50,8 +50,22 @@
     cursor: pointer;
 }
 
-@media(min-width: 320px) and (max-width: 768px) {
-    .form label{
+ @media (max-width: 768px) {
+    .container{
         width: 90%;
+    }
+
+    .form{ 
+        width: 100%;
+        padding-right: 8%;
+        padding-left: 8%;
+    }
+
+    .form label{
+        width: 100%;
+    }
+
+    .form label input{
+        width: 100%;
     }
 }

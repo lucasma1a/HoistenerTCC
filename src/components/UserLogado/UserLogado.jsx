@@ -7,7 +7,7 @@ const UserLogado = ({ loggedUser }) => {
   const navigate = useNavigate()
   const getId = sessionStorage.getItem('id') 
   const { id } = useParams()
-  const { reserva } = useContext(AppContext);
+  const {UserLogado} = useContext(AppContext)
   const [reservas, setReservas] = useState([])
   console.log(reservas);
 

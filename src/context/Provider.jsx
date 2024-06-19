@@ -6,6 +6,7 @@ export const Provider = ({ children }) => {
     const [userLogado, setUserLogado] = useState({
         name: '',
         password: '',
+        email: ''
     }) 
 
 
