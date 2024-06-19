@@ -26,11 +26,12 @@
     justify-content: space-around;
     background-color: transparent;
     transition: 0.3s ease;
+    background-image: linear-gradient(to bottom, rgba(23, 23, 23, 0.333), transparent);
 }
 
 .nav-navbar.opaque{
-    background-color: black;
     color: white;
+    background-color: #000;
 }
 
 .nav-navbar ul{
@@ -47,14 +48,9 @@
     margin-right: 500px;
     text-decoration: none;
     width: 70px;
+    
 }
 
-.nav-bar-btn-fechar{
-    display: none;
-}
-.nav-bar-btn{
-    display: none;
-}
 
 
 
