@@ -4,6 +4,7 @@ import AppContext from './AppContext.jsx';
 export const Provider = ({ children }) => {
     const [reserva, setReserva] = useState([])
     const [userLogado, setUserLogado] = useState({
+        _id: '',
         name: '',
         password: '',
         email: ''

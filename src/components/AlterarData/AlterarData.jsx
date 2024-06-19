@@ -89,6 +89,7 @@ const AlterarData = () => {
               if(response.status === 200){
                 alert('Dados alterados com sucesso')
                 setUserLogado({
+                  _id: usuario._id,
                   name: usuario.name,
                   password: usuario.password,
                   email: usuario.email
