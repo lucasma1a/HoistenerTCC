@@ -13,6 +13,7 @@
     width: 100%;
     z-index: 9999;
     position: fixed;
+    top: 0;
 }
 
 .nav ul{
@@ -31,6 +32,7 @@
 
 .nav-navbar.opaque{
     color: white;
+    border-bottom: 1px solid white;
     background-color: #000;
 }
 
@@ -157,6 +159,7 @@
     display:  grid;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    padding-top: 7%;
 }
 
 .marcas-bmw {
@@ -189,6 +192,7 @@
     color: white;
     padding: 2rem 2rem;
     padding-bottom: 8%;
+    padding-top: 5%;
   }
 .login p {
     margin-top: 30px;

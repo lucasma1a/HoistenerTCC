@@ -107,7 +107,7 @@ const AlterarData = () => {
             })
           } 
         }).catch((e) => {
-          alert(e)
+          alert('erro: ', e)
         })
       };
 

@@ -4,7 +4,8 @@
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
-    padding: 2%;
+    padding-top: 6%;
+    padding-bottom: 6%;
 }
 
 @media (max-width: 768px){

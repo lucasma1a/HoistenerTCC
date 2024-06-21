@@ -10,11 +10,14 @@ const FormCadastro = () => {
     email: '',
     password: '',
     cpf: '',
-    cep: '',
     logradouro: '',
     bairro: '',
     localidade: '',
-    uf: ''
+    uf: '',
+    cep: '',
+    telefone: '',
+    data_nascimento: '',
+    num: ''
   });
 
   const handleChange = (e) => {
@@ -59,11 +62,12 @@ const FormCadastro = () => {
         alert('Usuário cadastrado');
         navigate('/login');
       }
-    });
+    }).catch((e) => {
+      alert(e)
+    })
   };
 
   //20220170
-
   return (
     <>
       <div className={style.container}>
@@ -179,6 +183,42 @@ const FormCadastro = () => {
               value={novoUsuario.uf}
               name='uf'
               readOnly
+              required
+            />
+          </label>
+
+          <label>
+            Telefone:
+            <input
+              type="text"
+              placeholder='Digite seu telefone'
+              onChange={handleChange}
+              value={novoUsuario.telefone}
+              name='telefone'
+              required
+            />
+          </label>
+
+          <label>
+            Data nascimento:
+            <input
+              type="date"
+              placeholder='Digite sua data de nascimento'
+              onChange={handleChange}
+              value={novoUsuario.data_nascimento}
+              name='data_nascimento'
+              required
+            />
+          </label>
+
+          <label>
+            Número:
+            <input
+              type="number"
+              placeholder='Digite seu número de telefone'
+              onChange={handleChange}
+              value={novoUsuario.num}
+              name='num'
               required
             />
           </label>

@@ -157,6 +157,7 @@ const CompraCarro = ({ car }) => {
                 placeholder="Digite seu telefone"
                 required={true}
                 onChange={handleChange}
+                value={user.telefone}
               />
             </label>
 
@@ -175,11 +176,11 @@ const CompraCarro = ({ car }) => {
             <label>
               Data de Nascimento:
               <input
-                type="date"
+                type="text"
                 placeholder="Insira sua data de nascimento"
-                max="2006-12-31"
                 required={true}
                 onChange={handleChange}
+                value={new Date(user.data_nascimento).toLocaleDateString()}
               />
             </label>
 
@@ -190,6 +191,7 @@ const CompraCarro = ({ car }) => {
                 placeholder="Insira seu CEP"
                 required={true}
                 onChange={handleChange}
+                value={user.cep}
               />
             </label>
 

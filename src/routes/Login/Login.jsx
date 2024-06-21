@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import Logo from "../../assets/hoistener-logo1.svg";
 import UserLogado from "../../components/UserLogado/UserLogado";
 import AppContext from "../../context/AppContext";
@@ -19,7 +20,7 @@ export default function Login() {
     email: '',
     password: ''
   })
-
+  
   useEffect(() => {
     fetch('http://localhost:4000/users')
     .then(response => response.json())
@@ -53,7 +54,7 @@ export default function Login() {
       }
     ).then(async (response) => {
       if (response.status === 200) {
-        alert('Login Efetuado')
+        alert('Login efetuado')
         navigate('/')
         return response.json(); 
       } else {
@@ -72,6 +73,8 @@ export default function Login() {
       );
     });
   };
+
+  console.log(login.password)
 
   return (
     <section className="login">
@@ -119,6 +122,7 @@ export default function Login() {
             <p style={{ fontSize: 14 }}>Não possui uma conta?</p>
             <Link to="/cadastro" className={style.linkCadastro}>
               <button>Cadastre-se</button>
+              <ToastContainer />
             </Link>
           </div>
         </form>
