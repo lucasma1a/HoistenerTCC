@@ -4,10 +4,10 @@ import CarroAston from "./img/astonmartin.jpg";
 import CarroAudi from "./img/audi.jpg";
 import CarroBMW from "./img/bmw.jpg";
 import CarroHyundai from "./img/hyundai.jpg";
-import CarroMeca from "./img/meca.jpg";
+import CarroMeca from "./img/meca.png";
 import CarroVolks from "./img/volks.jpg";
 
-import '../Carrossel/CarrosselMarcass.module.css'
+import style from'./CarrosselMarcas.module.css'
 
 const CarrosselMarcas = () => {
     const marcas = [
@@ -40,15 +40,13 @@ const CarrosselMarcas = () => {
   
     return (
     <>
-    <div className='container-carrossel-marcas'>
+    <div className={style.containerCarrosselMarcas}>
       <Swiper 
-        slidesPerView={2}
-        pagination={{clickable: true}}
-        
+        slidesPerView={3}
       >
         {marcas.map ((item) => (
         <SwiperSlide key={item.id}>
-            <img src={item.image} alt='slideMarca' className='container-carrossel-marca-slide'></img>
+            <img src={item.image} alt='slideMarca' className={style.containerCarrosselMarcasSlide}></img>
         </SwiperSlide>
       ))}  
       </Swiper>

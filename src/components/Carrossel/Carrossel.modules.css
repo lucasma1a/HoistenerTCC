@@ -5,16 +5,13 @@
 
 .container-carrossel-swiper{
     box-shadow: 10px;
+    color: white;
 }
 
 .container-carrossel-slide{
     width: 100%;
     height: 700px;
     object-fit: cover;
-}
-
-.container-carrossel-swiper{
-    color: white;
 }
 
 

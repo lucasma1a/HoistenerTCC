@@ -25,6 +25,7 @@
     margin-top: 20px;
     width: 100%;
     flex-direction: column;
+    border-radius: 15px;
   }
   
   .menuList .navNavbarLink {
@@ -41,6 +42,9 @@
   @media (max-width: 768px){ 
     .menuContainer{
         display:block;
+    }
+    .menuList{
+      margin-top: 10px;
     }
   }
   
