@@ -5,6 +5,7 @@ import Car from '../components/Car/Car.jsx';
 import CarrosselMarcas from '../components/CarrosselMarcas/CarrosselMarcas.jsx';
 import ErroBusca from '../components/ErroBusca/ErroBusca.jsx';
 import ListaMarcas from '../components/ListaMarcas/ListaMarcas.jsx';
+import CarrosselMarcas from '../components/CarrosselMarcas/CarrosselMarcas.jsx';
 import '../css/style.css';
 
 export default function Garagem() {
@@ -67,6 +68,7 @@ export default function Garagem() {
 
             <section className="marcas">
                 <ListaMarcas />
+                <CarrosselMarcas />
             </section>
 
             <CarrosselMarcas/>

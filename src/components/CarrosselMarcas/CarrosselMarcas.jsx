@@ -5,7 +5,7 @@ import CarroAston from "./img/astonmartin.jpg";
 import CarroAudi from "./img/audi.jpg";
 import CarroBMW from "./img/bmw.jpg";
 import CarroHyundai from "./img/hyundai.jpg";
-import CarroMeca from "./img/meca.jpg";
+import CarroMeca from "./img/meca.png";
 import CarroVolks from "./img/volks.jpg";
 
 import 'slick-carousel/slick/slick-theme.css';

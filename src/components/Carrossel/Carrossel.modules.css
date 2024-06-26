@@ -5,6 +5,7 @@
 
 .container-carrossel-swiper{
     box-shadow: 10px;
+    color: white;
 }
 
 .container-carrossel-slide{
@@ -13,9 +14,6 @@
     object-fit: cover;
 }
 
-.container-carrossel-swiper{
-    color: white;
-}
 
 @media(min-width: 320px) and (max-width: 519px){
     .container-carrossel img{
