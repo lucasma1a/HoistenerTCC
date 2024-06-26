@@ -30,7 +30,8 @@ const Car = ({ car }) => {
                 <Link to={`/detalhes/${car._id}`} className={style.btnLink}>
                     <button className={style.containerCarroCardBtnBtn}>Detalhes</button>
                 </Link>
-                <Link to={`/compra/${car._id}`}>
+                <Link to={`/compra/${car._id}`} 
+                style={{textDecoration: 'none'}}>
                 <button 
                     className={style.containerCarroCardBtnBtn}
                 >

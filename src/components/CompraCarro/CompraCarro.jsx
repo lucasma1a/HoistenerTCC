@@ -1,4 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
+import { CgArrowsExchangeAltV } from "react-icons/cg";
+import { IoMdSpeedometer } from "react-icons/io";
+import { PiGearFineFill } from "react-icons/pi";
 import { useNavigate, useParams } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 import style from "./CompraCarro.module.css";
@@ -75,20 +78,6 @@ const CompraCarro = ({ car }) => {
     }
   };
 
-  const handleDelete = (id) => {
-    if (!getId && !getToken) {
-      return;
-    } else {
-      fetch(`http://localhost:4000/car/${id}`, {
-        method: "DELETE",
-      }).then(() => {
-        console.log("Carro da exclusão", id);
-      });
-    }
-  };
-
-  console.log("Reserva: ", reserva);
-
   function formatPrice(price) {
     return price.toLocaleString("pt-BR", {
       style: "currency",
@@ -108,18 +97,16 @@ const CompraCarro = ({ car }) => {
           <div className={style.containerImg}>
             <img src={car.image} alt={`${car.mark}, ${car.model}`} />
           </div>
-          {/* <div className={style.containerInfo}>
+          <div className={style.containerInfo}>
             <ul className={style.infoTop}>
-              <li>carro</li>
-              <li>carro</li>
-              <li>carro</li>
+              <li><IoMdSpeedometer size={25}/>{car.quilometragem}</li>
+              <li><CgArrowsExchangeAltV />Cambio:  {car.cambio}</li>
             </ul>
             <ul className={style.infoBot}>
-              <li>carro</li>
-              <li>carro</li>
-              <li>carro</li>
+              <li> <PiGearFineFill />Motor: {car.motor}</li>
+              <li  className={style.flex}>Flex: {car.flex ? <p>Flex</p> : <p>Não</p>}</li>
             </ul>
-          </div> */}
+          </div>
         </div>
 
         <div className={style.form}>
@@ -180,7 +167,7 @@ const CompraCarro = ({ car }) => {
                 placeholder="Insira sua data de nascimento"
                 required={true}
                 onChange={handleChange}
-                value={new Date(user.data_nascimento).toLocaleDateString()}
+                value={user.data_nascimento ? new Date(user.data_nascimento).toLocaleDateString() : ''}
               />
             </label>
 

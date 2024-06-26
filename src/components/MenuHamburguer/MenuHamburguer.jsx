@@ -1,35 +1,34 @@
-import React, { useState } from "react";
-import style from "./MenuHamburguer.module.css";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import { MdAccountCircle } from "react-icons/md";
-import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import Logo from '../../assets/hoistener-logo1.svg';
 import AppContext from "../../context/AppContext";
+import style from "./MenuHamburguer.module.css";
 
-const MenuHamburguer = () => {
+const MenuHamburguer = ({cor}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {userLogado, active, setActive} = useContext(AppContext)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
+    setActive(!active)
 
-  const {userLogado} = useContext(AppContext)
-    console.log(userLogado)
+    console.log(active)
+  };
 
     let getId = sessionStorage.getItem('user')
 
-    if(userLogado){
-        console.log('molina n vem hj')
-    } else {
-        console.log('ashu')
-    }
-
   return (
-    <div className={style.menuContainer}>
+    <div className={`${style.menuContainer} ${active ? style.dark : ''}`}>
       <button className={style.menuButton} onClick={toggleMenu}>
         ☰
       </button>
       {isOpen && (
+        <>
         <ul className={style.menuList}>
+          <Link to="/">
+            <img src={Logo} className={style.img} />
+          </Link>
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -62,6 +61,7 @@ const MenuHamburguer = () => {
             {userLogado ? <p>{` ${userLogado.name}`}</p> : null}
           </NavLink>
         </ul>
+        </>
       )}
     </div>
   );

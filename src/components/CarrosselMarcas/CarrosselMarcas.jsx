@@ -1,5 +1,6 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 import CarroAston from "./img/astonmartin.jpg";
 import CarroAudi from "./img/audi.jpg";
 import CarroBMW from "./img/bmw.jpg";
@@ -7,54 +8,67 @@ import CarroHyundai from "./img/hyundai.jpg";
 import CarroMeca from "./img/meca.jpg";
 import CarroVolks from "./img/volks.jpg";
 
-import '../Carrossel/CarrosselMarcass.module.css'
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import style from './CarrosselMarcas.module.css';
 
 const CarrosselMarcas = () => {
     const marcas = [
         {
-            id: 1,
-            image: CarroBMW
+        marca: 'BMW',
+        imagem: CarroBMW,
+        rota: 'bmw'    
         },
         {
-            id: 2,
-            image: CarroAston
+        marca: 'ASTON',
+        imagem: CarroAston,    
+        rota: 'aston'    
         },
         {
-            id: 3,
-            image: CarroAudi
+        marca: 'AUDI',
+        imagem: CarroAudi,
+        rota: 'audi'        
         },
         {
-            id: 4,
-            image: CarroHyundai
+        marca: 'HYUNDAI',
+        imagem: CarroHyundai,
+        rota: 'hyundai'        
         },
         {
-            id: 5,
-            image: CarroMeca
+        marca: 'MERCEDES',
+        imagem: CarroMeca,
+        rota: 'meca'        
         },
         {
-            id: 6,
-            image: CarroVolks
-        }
-
+        marca: 'VOLKSWAGEN',
+        imagem: CarroVolks,
+        rota: 'volks'        
+        },
     ]
-  
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true
+    };
+
     return (
-    <>
-    <div className='container-carrossel-marcas'>
-      <Swiper 
-        slidesPerView={2}
-        pagination={{clickable: true}}
-        
-      >
-        {marcas.map ((item) => (
-        <SwiperSlide key={item.id}>
-            <img src={item.image} alt='slideMarca' className='container-carrossel-marca-slide'></img>
-        </SwiperSlide>
-      ))}  
-      </Swiper>
-    </div>
-    </>
-  )
+        <div className={style.containerCarrosselMarcas}>
+            <Slider {...settings} className={style.slider}>
+                {marcas.map((item, index) => (
+                    <Link to={`/garagem/${item.rota}`} className={style.link}>
+                    <div key={index} className={style.card}>
+                        <img src={item.imagem} alt={`Carro ${item.id}`} className={style.cardImage} />
+                        <h1>{item.marca}</h1>
+                    </div>
+                    </Link>
+                ))}
+            </Slider>
+        </div>
+    );
 }
 
-export default CarrosselMarcas
+export default CarrosselMarcas;

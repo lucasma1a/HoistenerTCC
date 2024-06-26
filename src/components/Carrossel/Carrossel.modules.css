@@ -17,7 +17,6 @@
     color: white;
 }
 
-
 @media(min-width: 320px) and (max-width: 519px){
     .container-carrossel img{
         height: 60vh;

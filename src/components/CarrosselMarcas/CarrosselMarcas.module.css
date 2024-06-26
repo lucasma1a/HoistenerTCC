@@ -1,15 +1,53 @@
-.container-carrossel-marcas{
-    width: 90%;
-    margin: 0 auto;
-}
-.container-carrossel-marca-slide{
-    height: 65vh;
-    width: 100%;
+.containerCarrosselMarcas {
+  width: 100%;
+  background: #000;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding-bottom: 10%;
 }
 
+.slider{
+  width: 60%;
+  font-family: 'Montserrat', sans-serif;
+}
 
-@media(min-width: 320px) and (max-width: 519px){
-    .container-carrossel{
-        display: block;
-    }
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  height: 40vh;
+  width: 100%;
+}
+
+.link{
+  text-decoration: none; 
+  color: black;
+}
+
+.cardImage {
+  width: 60%;
+  height: 20vh;
+  margin-left: 54px;
+}
+
+.cardTitle {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.cardDescription {
+  font-size: 0.9em;
+  color: #666;
+}
+
+@media (max-width: 730px){
+  .containerCarrosselMarcas{
+    display: flex;
+  }
+
 }

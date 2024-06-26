@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { MdAccountCircle } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/hoistener-logo.png";
 import LogoUm from "../assets/hoistener-logo1.png";
 import MenuHamburguer from "../components/MenuHamburguer/MenuHamburguer";
 import AppContext from "../context/AppContext";
@@ -11,6 +10,7 @@ import "../css/style.css";
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const {active} = useContext(AppContext)
 
   const handleMouseEnter = () =>{
     setIsHovered(true);
@@ -41,18 +41,11 @@ export default function Nav() {
 
   let getId = sessionStorage.getItem("user");
 
-  if (userLogado) {
-    console.log("molina n vem hj");
-  } else {
-    console.log("ashu");
-  }
-
-
   return (
     <>
       <a id="Home"></a>
       <header className="nav">
-        <nav className={`nav-navbar ${isScrolled ? 'opaque' : ""}`}>
+        <nav className={`nav-navbar ${isScrolled ? 'opaque' : ""} ${active ? style.dark : ''}`}>
           <ul>
             <NavLink to="/" className={`nav-navbar-img`} data-test-id>
               <img src={LogoUm}></img>

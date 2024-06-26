@@ -1,9 +1,8 @@
 import { PiShoppingCartDuotone } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from './DetalhesCarro.module.css';
 
 export default function DetalhesCarro({infoCar}){
-    const navigate = useNavigate();
     
     function formatPrice(price) {
         return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -27,7 +26,7 @@ export default function DetalhesCarro({infoCar}){
                         <li><b>Placa:</b> {infoCar.plate}</li>
                         <li><b>Data de lançamento:</b> {new Date(infoCar.releaseDate).toLocaleDateString()}</li>
                         <li><b>Cor:</b> {infoCar.color}</li>
-                    </ul>
+                    </ul> 
 
                     <h3>Descrição:</h3>
 
@@ -38,7 +37,7 @@ export default function DetalhesCarro({infoCar}){
             </div>
 
             <div className={style.btns}>
-                <Link to={`/compra/${infoCar._id}`}>
+                <Link to={`/compra/${infoCar._id}`} style={{textDecoration: 'none'}}>
                 <button> <PiShoppingCartDuotone size={25}/>Reservar agora</button>
                 </Link>
                 <Link to='/garagem' className={style.btnLink}>

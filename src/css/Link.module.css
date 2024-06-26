@@ -8,7 +8,7 @@
     text-align: center;
     align-items: center;
     gap: 5px;
-    font-weight: 200;
+    font-weight: 500;
     position: relative; 
     transition: 0.2s ease;
 }
@@ -33,13 +33,19 @@
 
 .linkDestacado{
     color: white;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 17px;
+    transition: 200ms ease-in-out;
 }
 
 .linkSemScroll{
     color: black;
     font-weight: 600;
     
+}
+
+.dark{
+    background-color: black;
 }
 
 @media (max-width: 768px){

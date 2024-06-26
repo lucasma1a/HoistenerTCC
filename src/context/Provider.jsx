@@ -3,6 +3,7 @@ import AppContext from './AppContext.jsx';
 
 export const Provider = ({ children }) => {
     const [reserva, setReserva] = useState([])
+    const [active, setActive] = useState(false)
     const [userLogado, setUserLogado] = useState({
         _id: '',
         name: '',
@@ -15,7 +16,9 @@ export const Provider = ({ children }) => {
         userLogado,
         setUserLogado,
         reserva,
-        setReserva
+        setReserva,
+        active, 
+        setActive
     };
 
     return (

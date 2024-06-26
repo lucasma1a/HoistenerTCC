@@ -3,6 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem;
-    padding-top: 6%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .container{
+        padding: 15%;
+    }
 }
