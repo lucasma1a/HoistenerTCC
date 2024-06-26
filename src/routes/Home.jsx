@@ -1,4 +1,6 @@
-import Carro from "../assets/R.jpg";
+import Carro from "../assets/imgCapo.jpg";
+import Carro1 from "../assets/imgDentro.jpg";
+import Carro2 from "../assets/imgFrente.jpg";
 import Carrossel from "../components/Carrossel/Carrossel";
 
 export default function Home() {
@@ -26,7 +28,7 @@ export default function Home() {
                 </div>                
                 <div className="sobre-container">                    
                     <div className="sobre-container-img2">
-                        <img src={Carro} alt="carro"/>
+                        <img src={Carro1} alt="carro"/>
                     </div>
                     <div className="divisao"></div>
                     <div className="sobre-container-texto2">
@@ -43,7 +45,7 @@ export default function Home() {
                     </div>
                     <div className="divisao"></div>
                     <div className="sobre-container-img">
-                        <img src={Carro} alt="carro"/>
+                        <img src={Carro2} alt="carro"/>
                     </div>
                 </div>
             </section>

@@ -29,7 +29,7 @@ export default function Footer() {
                         <a href="#Home">Menu</a>
                     </li>
                     <li className="footer-container-2-info">
-                        <a href="/">Sobre Nós</a>
+                        <a href="#Sobre">Sobre Nós</a>
                     </li>
                     </ul>
                 </div>                    
