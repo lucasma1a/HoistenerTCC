@@ -10,6 +10,12 @@ export default function DetalhesCarro({infoCar}){
         
     const formattedPrice = formatPrice(infoCar.price);
 
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        date.setDate(date.getDate() + 1); 
+        return date.toLocaleDateString('pt-BR');
+      }
+
     return(
         <>
         <section className={style.detalhes}>
@@ -24,7 +30,7 @@ export default function DetalhesCarro({infoCar}){
                 <div className={style.desc}>
                     <ul>
                         <li><b>Placa:</b> {infoCar.plate}</li>
-                        <li><b>Data de lançamento:</b> {new Date(infoCar.releaseDate).toLocaleDateString()}</li>
+                        <li><b>Data de lançamento:</b> {infoCar.releaseDate ? formatDate(infoCar.releaseDate) : ''}</li>
                         <li><b>Cor:</b> {infoCar.color}</li>
                     </ul> 
 

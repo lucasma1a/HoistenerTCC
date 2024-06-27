@@ -212,10 +212,10 @@ const FormCadastro = () => {
           </label>
 
           <label>
-            Número:
+            Número da residência:
             <input
               type="number"
-              placeholder='Digite seu número de telefone'
+              placeholder='Digite seu número de residência'
               onChange={handleChange}
               value={novoUsuario.num}
               name='num'

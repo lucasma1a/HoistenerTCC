@@ -99,6 +99,12 @@
     width: 100%;
     background: black;
     padding-bottom: 15%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sobre-container {

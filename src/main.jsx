@@ -13,7 +13,6 @@ import Aston from './routes/Aston.jsx';
 import Audi from './routes/Audi.jsx';
 import Bmw from './routes/Bmw.jsx';
 import Cadastro from './routes/Cadastro/Cadastro.jsx';
-import Carrinho from './routes/Carrinho/Carrinho.jsx';
 import Compra from './routes/Compra/Compra.jsx';
 import Detalhes from './routes/Detalhes/Detalhes.jsx';
 import Error from './routes/Error.jsx';
@@ -56,7 +55,6 @@ const router = createBrowserRouter(
         { path: '/detalhes/:id', element: <Detalhes /> },
         { path: '/teste/:id', element: <Teste /> },
         { path: '/teste', element: <Teste /> },
-        { path: '/carrinho', element: <Carrinho /> },
         { path: '/cadastro', element: <Cadastro /> },
         { path: '/compra/:id', element: <Compra /> },
         { path: '/alterar/:id', element: <Alterar /> },
